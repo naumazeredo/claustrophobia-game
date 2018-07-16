@@ -1,4 +1,10 @@
+# Ideas / Not decided
+
+- Game objective (points? survival time?)
+
 # Roadmap
+
+## Game
 
 - [ ] Player Movement
   - [x] Basic (does not work with explosions...)
@@ -19,7 +25,13 @@
   - [ ] General level generation
   - [ ] Level progression
 - [ ] Power ups
-- [ ] Graphics
+- [ ] UI
+  - [ ] Basic UI
+  - [ ] Game Over
+
+## Art
+
+- [ ] GFX
   - [ ] General graphics feel
   - [ ] Player
   - [ ] Circle
@@ -27,8 +39,14 @@
     - [ ] Basic enemy
     - [ ] Basic enemy attack
   - [ ] Player attack
-- [ ] UI
-  - [ ] Basic UI
+- [ ] SFX
+  - [ ] Music
+  - [ ] Player attack
+  - [ ] Enemy attack
+  - [ ] Player damage
+
+## Extra
+
 - [ ] Extra
   - [ ] More player attacks
   - [ ] More enemies
