@@ -4,9 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Circle
   - PlayerAttack
   - EnemyAttack
+  - Hull
   layers:
   - Default
   - TransparentFX

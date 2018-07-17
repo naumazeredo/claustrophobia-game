@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 61378945537115450}
   - component: {fileID: 114646973944489132}
   - component: {fileID: 114762121740657988}
+  - component: {fileID: 114489305403554496}
   m_Layer: 8
   m_Name: PlayerLaser
   m_TagString: PlayerAttack
@@ -89,6 +90,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.01, y: 0.1}
   m_EdgeRadius: 0.01
+--- !u!114 &114489305403554496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1276442344627400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3200854428f1430abe2becfe7758032, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushForce: 120
 --- !u!114 &114646973944489132
 MonoBehaviour:
   m_ObjectHideFlags: 1

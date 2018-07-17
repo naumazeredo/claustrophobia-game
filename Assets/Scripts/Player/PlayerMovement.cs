@@ -2,13 +2,13 @@
 
 public class PlayerMovement : MonoBehaviour {
   public float speed = 150f;
-  public float circlePushForce = 10f;
+  public float hullPushForce = 10f;
 
   Rigidbody2D rb;
+  Collider2D playerCollider;
 
-  GameObject circle;
-  CircleCollider2D circleCollider;
-  Rigidbody2D circleRigidbody;
+  GameObject hull;
+  Rigidbody2D hullRigidbody;
 
   float inputX;
   float inputY;
@@ -16,10 +16,10 @@ public class PlayerMovement : MonoBehaviour {
 
   void Start () {
     rb = GetComponent<Rigidbody2D>();
+    playerCollider = GetComponent<Collider2D>();
 
-    circle = GameObject.FindWithTag("Circle");
-    circleCollider = circle.GetComponent<CircleCollider2D>();
-    circleRigidbody = circle.GetComponent<Rigidbody2D>();
+    hull = GameObject.FindWithTag("Hull");
+    hullRigidbody = hull.GetComponent<Rigidbody2D>();
   }
 
   void Update () {
@@ -37,13 +37,27 @@ public class PlayerMovement : MonoBehaviour {
     }
   }
 
-  void FixedUpdate() {
-    Vector3 circlePlayerDist = transform.position - circle.transform.position;
-    if (circlePlayerDist.magnitude > circleCollider.radius) {
-      circlePlayerDist = circlePlayerDist.normalized * circleCollider.radius;
-      transform.position = circle.transform.position + circlePlayerDist;
+  void SeparateCollider(Collider2D col) {
+    ColliderDistance2D colDistance = col.Distance(playerCollider);
+    if (colDistance.isValid && colDistance.distance < 0f) {
+      Vector3 delta = colDistance.distance * colDistance.normal;
 
-      circleRigidbody.AddForce(circlePushForce * circlePlayerDist.normalized);
+      transform.position -= delta;
+      rb.velocity = Vector2.zero;
+
+      hullRigidbody.AddForce(hullPushForce * delta.normalized);
+    }
+  }
+
+  void OnTriggerEnter2D(Collider2D col) {
+    if (col.CompareTag("Hull")) {
+      SeparateCollider(col);
+    }
+  }
+
+  void OnTriggerStay2D(Collider2D col) {
+    if (col.CompareTag("Hull")) {
+      SeparateCollider(col);
     }
   }
 }

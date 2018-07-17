@@ -1,6 +1,12 @@
 # Ideas / Not decided
 
-- Game objective (points? survival time?)
+- Attacks inside hull move in slow mode
+- 8 directions (instead of free move)
+- Scripted levels or procedural?
+
+# Decided
+
+- X levels (+ new game plus, if we have time)
 
 # Roadmap
 
@@ -8,17 +14,17 @@
 
 - [ ] Player Movement
   - [x] Basic (does not work with explosions...)
-  - [x] Space circle (using center of ship. Can be more sophisticated using the
+  - [x] Hull (using center of ship. Can be more sophisticated using the
       colliders)
   - [ ] React to explosions?
 - [ ] Attack
-  - [ ] Circle interaction
+  - [ ] Hull interaction
   - [ ] Enemy interaction
 - [ ] Enemy
   - [ ] Basic enemy movement
   - [ ] Basic enemy attack
   - [ ] First boss
-- [ ] Player health (circle shrink)
+- [ ] Player health (hull shrink)
   - [ ] Enemy attack interaction (invul time)
 - [ ] Level design
   - [ ] Tutorial
@@ -34,7 +40,7 @@
 - [ ] GFX
   - [ ] General graphics feel
   - [ ] Player
-  - [ ] Circle
+  - [ ] Hull
   - [ ] Enemy
     - [ ] Basic enemy
     - [ ] Basic enemy attack
