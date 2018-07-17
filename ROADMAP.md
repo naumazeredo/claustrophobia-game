@@ -3,6 +3,7 @@
 - Attacks inside hull move in slow mode
 - 8 directions (instead of free move)
 - Scripted levels or procedural?
+- Deform hull (test spring)
 
 # Decided
 
@@ -18,11 +19,11 @@
       colliders)
   - [ ] React to explosions?
 - [ ] Attack
-  - [ ] Hull interaction
+  - [x] Hull interaction
   - [ ] Enemy interaction
 - [ ] Enemy
-  - [ ] Basic enemy movement
-  - [ ] Basic enemy attack
+  - [x] Basic enemy movement
+  - [x] Basic enemy attack
   - [ ] First boss
 - [ ] Player health (hull shrink)
   - [ ] Enemy attack interaction (invul time)
