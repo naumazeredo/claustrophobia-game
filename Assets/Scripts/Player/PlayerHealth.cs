@@ -13,23 +13,25 @@ public class PlayerHealth : MonoBehaviour {
   bool invincible;
 
   Transform hullTransform;
+  GameCoordinator gameCoordinator;
 
   void Start () {
     currentHealth = totalHealth;
 
     spriteRenderer = GetComponent<SpriteRenderer>();
     hullTransform = GameObject.FindWithTag("Hull").transform;
+
+    gameCoordinator = GameObject.FindWithTag("GameCoordinator").GetComponent<GameCoordinator>();
   }
 
   public void TakeDamage() {
     if (invincible)
       return;
 
-    Debug.Log("Damage taken!");
-
     currentHealth--;
     if (currentHealth <= 0) {
-      Debug.Log("You are DEAD!");
+      gameObject.SetActive(false);
+      gameCoordinator.GameOver();
       return;
     }
 
@@ -38,7 +40,7 @@ public class PlayerHealth : MonoBehaviour {
     float newScale = hullTransform.localScale.x - 0.1f;
     hullTransform.localScale = new Vector3(newScale, newScale, 1);
 
-    // TODO: Move hull collider to child, change child scale and change hull sprite!
+    // XXX: Move hull collider to child, change child scale and change hull sprite!
 
     StartCoroutine(Invincibility());
   }

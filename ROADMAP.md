@@ -14,15 +14,16 @@
 
 ## Game
 
-- [ ] Player Movement
+- [x] Player Movement
   - [x] Basic
   - [x] Hull (using center of ship. Can be more sophisticated using the
       colliders)
-- [ ] Bullets
+- [x] Bullets
   - [x] Hull interaction
   - [x] Enemy interaction
   - [x] Player interaction
 - [ ] Enemy
+  - [ ] Destroy after get out of screen
   - [x] Dummy enemy
   - [ ] Oblique enemy
     - [ ] Movement
@@ -77,3 +78,4 @@
 - [ ] Unity
   - [ ] "Screen position out of view frustum" -> Probably because of camera
       size?
+- [ ] Movement + attack: up left shooting doesnt work
