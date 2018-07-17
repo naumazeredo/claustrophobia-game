@@ -1,33 +1,31 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour {
-  public float fireRate = 0.5f;
+  public float fireDelay = 0.2f;
+  public Shooting basicShooting;
 
   bool fired;
-  float fireDelay;
-
-  UnitShoot unitShoot;
 
   void Start () {
-    unitShoot = GetComponent<UnitShoot>();
   }
 
   void Update () {
-    if (fired) {
-      fireDelay += Time.deltaTime;
-      if (fireDelay >= fireRate) {
-        fired = false;
-        fireDelay = 0f;
-      }
+    if (Input.GetButton("Fire") && !fired) {
+      Attack();
     }
-
-    if (Input.GetButton("Fire") && !fired)
-      Fire();
   }
 
-  void Fire() {
-    unitShoot.Shoot();
+  IEnumerator Reload() {
+    yield return new WaitForSeconds(fireDelay);
+    fired = false;
+    yield return null;
+  }
+
+  void Attack() {
+    basicShooting.Fire();
 
     fired = true;
+    StartCoroutine(Reload());
   }
 }

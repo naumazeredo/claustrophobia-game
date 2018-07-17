@@ -23,9 +23,16 @@
   - [x] Enemy interaction
   - [x] Player interaction
 - [ ] Enemy
-  - [x] Basic enemy movement
-  - [x] Basic enemy attack
+  - [x] Dummy enemy
+  - [ ] Oblique enemy
+    - [ ] Movement
+    - [ ] Attack
+  - [ ] Double shot enemy
+    - [ ] Movement
+    - [ ] Attack
   - [ ] First boss
+    - [ ] Movement (use yield to add complexity)
+    - [ ] Attack (use yield to add complexity)
 - [ ] Player health (hull shrink)
   - [ ] Enemy attack interaction (invul time)
   - [ ] Damage invulnerability time
@@ -53,6 +60,8 @@
   - [ ] Player attack
   - [ ] Enemy attack
   - [ ] Player damage
+  - [ ] Player explosion
+  - [ ] Enemy 
 
 ## Extra
 

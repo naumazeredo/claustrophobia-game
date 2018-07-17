@@ -5,8 +5,11 @@ public class DestroyByContact : MonoBehaviour {
     if (col.CompareTag("Hull"))
       return;
 
+    Destroy(gameObject);
+
     if (col.CompareTag("Player")) {
       Debug.Log("Damage taken!");
+      return;
     }
 
     // TODO: Call explosion
