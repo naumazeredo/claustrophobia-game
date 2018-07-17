@@ -8,6 +8,7 @@ TagManager:
   - EnemyAttack
   - Hull
   - Enemy
+  - GameCoordinator
   layers:
   - Default
   - TransparentFX
