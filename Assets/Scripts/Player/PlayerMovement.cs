@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour {
   float inputX;
   float inputY;
   float angle;
+  Vector2 input;
+  Vector2 lastInput; // Used to avoid ghost key-ups and maintain rotation
 
   void Start () {
     rb = GetComponent<Rigidbody2D>();
@@ -24,17 +26,23 @@ public class PlayerMovement : MonoBehaviour {
 
   void Update () {
     inputX = Input.GetAxis("Horizontal");
+    inputX = Mathf.Abs(inputX) < Mathf.Epsilon ? 0f : Mathf.Sign(inputX);
+
     inputY = Input.GetAxis("Vertical");
+    inputY = Mathf.Abs(inputY) < Mathf.Epsilon ? 0f : Mathf.Sign(inputY);
+
+    input = new Vector2(inputX, inputY);
+    input.Normalize();
 
     // FIXME: Isso nao funciona se o objeto for ser empurrado por forcas externas...
-    Vector2 velocity = new Vector2(inputX, inputY) * speed;
-    rb.velocity = velocity;
+    rb.velocity = input * speed;
 
-    // TODO: rotation speed?
-    if (Mathf.Max(Mathf.Abs(inputX), Mathf.Abs(inputY)) > 0.01f) {
+    if (input.magnitude > Mathf.Epsilon && input == lastInput) {
       angle = -Mathf.Atan2(inputX, inputY) * Mathf.Rad2Deg;
       transform.localRotation = Quaternion.Euler(0, 0, angle);
     }
+
+    lastInput = input;
   }
 
   void SeparateCollider(Collider2D col) {

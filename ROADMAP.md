@@ -1,35 +1,37 @@
 # Ideas / Not decided
 
 - Attacks inside hull move in slow mode
-- 8 directions (instead of free move)
 - Scripted levels or procedural?
 - Deform hull (test spring)
+- Attack independent of movement (BoI, EtG)
 
 # Decided
 
 - X levels (+ new game plus, if we have time)
+- 8 directions (instead of free move)
 
 # Roadmap
 
 ## Game
 
 - [ ] Player Movement
-  - [x] Basic (does not work with explosions...)
+  - [ ] Basic (does not work with explosions...)
   - [x] Hull (using center of ship. Can be more sophisticated using the
       colliders)
-  - [ ] React to explosions?
-- [ ] Attack
+- [ ] Bullets
   - [x] Hull interaction
-  - [ ] Enemy interaction
+  - [x] Enemy interaction
+  - [x] Player interaction
 - [ ] Enemy
   - [x] Basic enemy movement
   - [x] Basic enemy attack
   - [ ] First boss
 - [ ] Player health (hull shrink)
   - [ ] Enemy attack interaction (invul time)
+  - [ ] Damage invulnerability time
 - [ ] Level design
   - [ ] Tutorial
-  - [ ] General level generation
+  - [ ] General level generation / Level scripting
   - [ ] Level progression
 - [ ] Power ups
 - [ ] UI
