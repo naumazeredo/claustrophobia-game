@@ -16,8 +16,8 @@ TagManager:
   - UI
   - 
   - 
-  - Attack
-  - PlayerAttack
+  - PlayerBullets
+  - EnemyBullets
   - 
   - 
   - 
