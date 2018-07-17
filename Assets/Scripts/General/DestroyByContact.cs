@@ -8,7 +8,7 @@ public class DestroyByContact : MonoBehaviour {
     Destroy(gameObject);
 
     if (col.CompareTag("Player")) {
-      Debug.Log("Damage taken!");
+      col.GetComponent<PlayerHealth>().TakeDamage();
       return;
     }
 

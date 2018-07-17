@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114646973944489132}
   - component: {fileID: 114762121740657988}
   - component: {fileID: 114489305403554496}
+  - component: {fileID: 114935270150934640}
   m_Layer: 8
   m_Name: PlayerBullet
   m_TagString: Untagged
@@ -126,6 +127,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdown: 2
+--- !u!114 &114935270150934640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1276442344627400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e151f95c37e7edb448f1cc0f9a43383d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212634978004459898
 SpriteRenderer:
   m_ObjectHideFlags: 1

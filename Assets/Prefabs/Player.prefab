@@ -24,8 +24,9 @@ GameObject:
   - component: {fileID: 50630706204409764}
   - component: {fileID: 114044275060431836}
   - component: {fileID: 114234267150560028}
-  - component: {fileID: 114315357193057334}
-  m_Layer: 0
+  - component: {fileID: 114447171395109574}
+  - component: {fileID: 114970700532837134}
+  m_Layer: 11
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -133,8 +134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dce6404da41e4628932523f68e60085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 0.2
---- !u!114 &114315357193057334
+  fireDelay: 0.2
+  basicShooting: {fileID: 114970700532837134}
+--- !u!114 &114447171395109574
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,11 +144,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1499213584275946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e631d40af1e2c42cd88ee1dd8b397ce5, type: 3}
+  m_Script: {fileID: 11500000, guid: 1f0dca706e8f2478980935265dacc870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalHealth: 5
+  invincibleTime: 1
+--- !u!114 &114970700532837134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1499213584275946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a56f14e05904aa6b57d4c0260e5f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attack: {fileID: 1276442344627400, guid: 6a6e018604961469fb3fa739279fba4e, type: 2}
-  shootLocation: {fileID: 4461487777961236}
+  shootLocations:
+  - {fileID: 4461487777961236}
 --- !u!212 &212886506672666126
 SpriteRenderer:
   m_ObjectHideFlags: 1

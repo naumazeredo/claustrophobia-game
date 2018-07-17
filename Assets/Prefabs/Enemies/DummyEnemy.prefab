@@ -35,12 +35,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4811966223517648}
   - component: {fileID: 212122840073063610}
-  - component: {fileID: 61305226492211570}
+  - component: {fileID: 58806414483405856}
   - component: {fileID: 50943803846952390}
-  - component: {fileID: 114988512438605292}
   - component: {fileID: 114952732159027096}
   - component: {fileID: 114981817345782612}
-  m_Layer: 0
+  - component: {fileID: 114896417574010564}
+  - component: {fileID: 114853028175033736}
+  m_Layer: 10
   m_Name: DummyEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -94,8 +95,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61305226492211570
-BoxCollider2D:
+--- !u!58 &58806414483405856
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -103,22 +104,37 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.25, y: 0.25}
-    newSize: {x: 0.32, y: 0.32}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 32, y: 32}
-  m_EdgeRadius: 0
+  m_Radius: 0.125
+--- !u!114 &114853028175033736
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1847839704752078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e151f95c37e7edb448f1cc0f9a43383d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114896417574010564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1847839704752078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7a56f14e05904aa6b57d4c0260e5f0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: {fileID: 1548167506781244, guid: 65e3355632b486145bcd0fc68cb6ff32, type: 2}
+  shootLocations:
+  - {fileID: 4458264276044034}
 --- !u!114 &114952732159027096
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,20 +158,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61250ddc2d8eec94d81d72010a8c2692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireRate: 1
---- !u!114 &114988512438605292
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1847839704752078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e631d40af1e2c42cd88ee1dd8b397ce5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attack: {fileID: 1548167506781244, guid: 65e3355632b486145bcd0fc68cb6ff32, type: 2}
-  shootLocation: {fileID: 4458264276044034}
+  delay: 1
+  startDelay: 1
+  shooting: {fileID: 114896417574010564}
 --- !u!212 &212122840073063610
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -17,6 +17,7 @@ public class PlayerAttack : MonoBehaviour {
   }
 
   IEnumerator Reload() {
+    fired = true;
     yield return new WaitForSeconds(fireDelay);
     fired = false;
     yield return null;
@@ -24,8 +25,6 @@ public class PlayerAttack : MonoBehaviour {
 
   void Attack() {
     basicShooting.Fire();
-
-    fired = true;
     StartCoroutine(Reload());
   }
 }

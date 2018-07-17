@@ -2,7 +2,7 @@
 
 - Attacks inside hull move in slow mode
 - Scripted levels or procedural?
-- Deform hull (test spring)
+- Deform hull (test spring) (use a single sprite for hull and shader to match)
 - Attack independent of movement (BoI, EtG)
 
 # Decided
@@ -15,7 +15,7 @@
 ## Game
 
 - [ ] Player Movement
-  - [ ] Basic (does not work with explosions...)
+  - [x] Basic
   - [x] Hull (using center of ship. Can be more sophisticated using the
       colliders)
 - [ ] Bullets
@@ -33,9 +33,8 @@
   - [ ] First boss
     - [ ] Movement (use yield to add complexity)
     - [ ] Attack (use yield to add complexity)
-- [ ] Player health (hull shrink)
-  - [ ] Enemy attack interaction (invul time)
-  - [ ] Damage invulnerability time
+- [x] Player health (hull shrink)
+  - [x] Enemy attack interaction (invul time)
 - [ ] Level design
   - [ ] Tutorial
   - [ ] General level generation / Level scripting
