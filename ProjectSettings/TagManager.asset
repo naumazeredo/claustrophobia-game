@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - GameCoordinator
   - Bounds
+  - Spawn
   layers:
   - Default
   - TransparentFX

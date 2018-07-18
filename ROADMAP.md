@@ -4,6 +4,7 @@
 - Scripted levels or procedural?
 - Deform hull (test spring) (use a single sprite for hull and shader to match)
 - Attack independent of movement (BoI, EtG)
+- Enemies not killed respawn (or give rankings based on # enemies killed / pacifist)
 
 # Decided
 
@@ -79,4 +80,5 @@
 - [ ] Unity
   - [ ] "Screen position out of view frustum" -> Probably because of camera
       size?
-- [ ] Movement + attack: up left shooting doesnt work
+- [ ] Player getting out of hull (collider too small, need to reposition when
+    hull gets smaller)

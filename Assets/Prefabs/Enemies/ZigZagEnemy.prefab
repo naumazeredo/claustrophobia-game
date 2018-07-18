@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedx: 2
-  speedy: 0.7
+  speedy: 0.5
   tilt: 30
   tiltInterval: 1
 --- !u!212 &212687487119176428

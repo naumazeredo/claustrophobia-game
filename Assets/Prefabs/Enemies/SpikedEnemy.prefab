@@ -234,8 +234,8 @@ GameObject:
   - component: {fileID: 58518220561235822}
   - component: {fileID: 50345548482008702}
   - component: {fileID: 114135747431271664}
-  - component: {fileID: 114773381108298522}
   - component: {fileID: 114504248326833404}
+  - component: {fileID: 114056117080383978}
   m_Layer: 10
   m_Name: SpikedEnemy
   m_TagString: Enemy
@@ -604,6 +604,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.125
+--- !u!114 &114056117080383978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1740037418983276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb63e6bf64ae433c8c0e73c08f3b4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114135747431271664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -650,20 +661,6 @@ MonoBehaviour:
   shootings:
   - {fileID: 114381672316498010}
   - {fileID: 114793867543261896}
---- !u!114 &114773381108298522
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1740037418983276}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61250ddc2d8eec94d81d72010a8c2692, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 1
-  startDelay: 1
-  shooting: {fileID: 114381672316498010}
 --- !u!114 &114793867543261896
 MonoBehaviour:
   m_ObjectHideFlags: 1
