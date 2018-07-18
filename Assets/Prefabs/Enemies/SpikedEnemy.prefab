@@ -654,10 +654,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55ab3dd65e2c345e4b24d9667ef28cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.5
-  moveTime: 2
+  speed: 0.7
+  moveTime: 3
   attackInterval: 0.5
-  waitTime: 2
+  waitTime: 1
   shootings:
   - {fileID: 114381672316498010}
   - {fileID: 114793867543261896}
@@ -714,7 +714,7 @@ SpriteRenderer:
   m_SortingLayer: -2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: e33d0cb20567443859ebf9d0c4182420, type: 3}
-  m_Color: {r: 1, g: 0.3584906, b: 0.3584906, a: 1}
+  m_Color: {r: 0.6320754, g: 0.58420825, b: 0.36970448, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

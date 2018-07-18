@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameCoordinator : MonoBehaviour {
   public Text[] gameOverTexts;
+  public float gameOverTimeScale = .2f;
 
   bool gameOver;
 
@@ -29,7 +30,7 @@ public class GameCoordinator : MonoBehaviour {
   }
 
   IEnumerator GameOverRoutine() {
-    Time.timeScale = .1f;
+    Time.timeScale = gameOverTimeScale;
     yield return new WaitForSecondsRealtime(.5f);
 
     foreach (var text in gameOverTexts)
