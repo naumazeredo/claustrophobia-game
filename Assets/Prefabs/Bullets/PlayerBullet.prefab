@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 50852455635403338}
   - component: {fileID: 61378945537115450}
   - component: {fileID: 114646973944489132}
-  - component: {fileID: 114762121740657988}
   - component: {fileID: 114489305403554496}
+  - component: {fileID: 114598064552754490}
   - component: {fileID: 114935270150934640}
   m_Layer: 8
   m_Name: PlayerBullet
@@ -103,6 +103,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushForce: 400
+--- !u!114 &114598064552754490
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1276442344627400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb63e6bf64ae433c8c0e73c08f3b4ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114646973944489132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,18 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
---- !u!114 &114762121740657988
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1276442344627400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59b64c31c697146619d6913dc7fabe5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  countdown: 5
 --- !u!114 &114935270150934640
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -7,17 +7,19 @@ public class PlayerHealth : MonoBehaviour {
 
   // TODO: create animation for blinking?
   public float invincibleBlinkTime = 0.1f;
-  SpriteRenderer spriteRenderer;
 
   int currentHealth;
   bool invincible;
 
+  PlayerMovement playerMovement;
+  SpriteRenderer spriteRenderer;
   Transform hullTransform;
   GameCoordinator gameCoordinator;
 
   void Start () {
     currentHealth = totalHealth;
 
+    playerMovement = GetComponent<PlayerMovement>();
     spriteRenderer = GetComponent<SpriteRenderer>();
     hullTransform = GameObject.FindWithTag("Hull").transform;
 
@@ -39,6 +41,8 @@ public class PlayerHealth : MonoBehaviour {
     // TODO: Smooth transition?
     float newScale = hullTransform.localScale.x - 0.1f;
     hullTransform.localScale = new Vector3(newScale, newScale, 1);
+
+    playerMovement.SeparateCollider();
 
     // XXX: Move hull collider to child, change child scale and change hull sprite!
 

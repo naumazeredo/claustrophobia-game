@@ -15,7 +15,7 @@
 
 ## Game
 
-- [ ] Hull screen bounds
+- [x] Hull screen bounds
 - [x] Player Movement
   - [x] Basic
   - [x] Hull (using center of ship. Can be more sophisticated using the
@@ -25,18 +25,16 @@
   - [x] Enemy interaction
   - [x] Player interaction
 - [ ] Enemy
-  - [ ] Destroy after get out of screen
+  - [x] Destroy after get out of screen
   - [x] Dummy enemy
   - [x] ZigZag enemy
   - [x] Spiked
   - [ ] First boss
-    - [ ] Movement (use yield to add complexity)
-    - [ ] Attack (use yield to add complexity)
 - [x] Player health (hull shrink)
   - [x] Enemy attack interaction (invul time)
 - [ ] Level design
   - [ ] Tutorial
-  - [ ] General level generation / Level scripting
+  - [x] General level generation / Level scripting
   - [ ] Level progression
 - [ ] Power ups
 - [ ] UI

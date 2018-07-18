@@ -15,5 +15,7 @@ public class SpawnPoint : MonoBehaviour {
     GetComponent<SpriteRenderer>().enabled = false;
     yield return new WaitForSeconds(delay);
     Instantiate(enemy, transform.position, transform.rotation);
+
+    Destroy(gameObject);
   }
 }

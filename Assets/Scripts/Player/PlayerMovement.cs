@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour {
   Collider2D playerCollider;
 
   GameObject hull;
+  Collider2D hullCollider;
   Rigidbody2D hullRigidbody;
 
   float inputX;
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour {
     playerCollider = GetComponent<Collider2D>();
 
     hull = GameObject.FindWithTag("Hull");
+    hullCollider = hull.GetComponent<Collider2D>();
     hullRigidbody = hull.GetComponent<Rigidbody2D>();
   }
 
@@ -45,8 +47,8 @@ public class PlayerMovement : MonoBehaviour {
     lastInput = input;
   }
 
-  void SeparateCollider(Collider2D col) {
-    ColliderDistance2D colDistance = col.Distance(playerCollider);
+  public void SeparateCollider() {
+    ColliderDistance2D colDistance = hullCollider.Distance(playerCollider);
     if (colDistance.isValid && colDistance.distance < 0f) {
       Vector3 delta = colDistance.distance * colDistance.normal;
 
@@ -59,13 +61,13 @@ public class PlayerMovement : MonoBehaviour {
 
   void OnTriggerEnter2D(Collider2D col) {
     if (col.CompareTag("Hull")) {
-      SeparateCollider(col);
+      SeparateCollider();
     }
   }
 
   void OnTriggerStay2D(Collider2D col) {
     if (col.CompareTag("Hull")) {
-      SeparateCollider(col);
+      SeparateCollider();
     }
   }
 }
