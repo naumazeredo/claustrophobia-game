@@ -24,8 +24,8 @@ GameObject:
   - component: {fileID: 50947589704480622}
   - component: {fileID: 114931888250073682}
   - component: {fileID: 114252246029651100}
-  - component: {fileID: 114649092663147304}
   - component: {fileID: 114120535886670888}
+  - component: {fileID: 114649092663147304}
   m_Layer: 10
   m_Name: ZigZagEnemy
   m_TagString: Enemy
@@ -68,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1143139171182742}
   m_LocalRotation: {x: 0, y: 0, z: -1, w: 0}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0.23, y: 3.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4331736381236960}
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61250ddc2d8eec94d81d72010a8c2692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 1
+  delay: 0.5
   startDelay: 1
   shooting: {fileID: 114649092663147304}
 --- !u!114 &114649092663147304
@@ -160,8 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a8838cdbaa8f8846af2f0cd752ce820, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedx: 1
-  speedy: 2
+  speedx: 2
+  speedy: 0.7
   tilt: 30
   tiltInterval: 1
 --- !u!212 &212687487119176428

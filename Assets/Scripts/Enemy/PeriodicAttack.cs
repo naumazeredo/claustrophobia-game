@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class DummyEnemyAttack : MonoBehaviour {
+public class PeriodicAttack : MonoBehaviour {
   public float delay = 1f;
   public float startDelay = 2f;
 
