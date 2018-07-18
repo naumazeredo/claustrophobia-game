@@ -25,12 +25,8 @@
 - [ ] Enemy
   - [ ] Destroy after get out of screen
   - [x] Dummy enemy
-  - [ ] Oblique enemy
-    - [ ] Movement
-    - [ ] Attack
-  - [ ] Double shot enemy
-    - [ ] Movement
-    - [ ] Attack
+  - [x] ZigZag enemy
+  - [x] Spiked
   - [ ] First boss
     - [ ] Movement (use yield to add complexity)
     - [ ] Attack (use yield to add complexity)
