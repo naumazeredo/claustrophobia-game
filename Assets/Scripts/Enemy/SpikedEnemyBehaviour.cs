@@ -24,7 +24,7 @@ public class SpikedEnemyBehaviour : MonoBehaviour {
 
       rb.velocity = Vector2.zero;
       for (int i = 0; i < shootings.Length; i++) {
-        shootings[i].Fire(attackInterval/4f);
+        shootings[i].Fire();
         if (i < shootings.Length-1)
           yield return new WaitForSeconds(attackInterval);
       }

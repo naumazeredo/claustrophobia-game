@@ -9,6 +9,7 @@ TagManager:
   - Hull
   - Enemy
   - GameCoordinator
+  - Bounds
   layers:
   - Default
   - TransparentFX
