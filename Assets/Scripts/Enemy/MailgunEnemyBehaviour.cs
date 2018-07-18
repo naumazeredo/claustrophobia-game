@@ -9,25 +9,25 @@ public class MailgunEnemyBehaviour : MonoBehaviour {
 
   public Shooting[] shootings;
 
-  Rigidbody2D rb;
-
   void Start () {
-    rb = GetComponent<Rigidbody2D>();
-    //rb.velocity = transform.up * speed;
-    rb.velocity = Vector2.zero;
-
     StartCoroutine(Behave());
   }
 
   IEnumerator Behave() {
     while (true) {
       for (int i = 0; i < shootings.Length; i++) {
-        shootings[i].Fire(attackInterval/8f);
+        shootings[i].Fire(attackInterval);
+        yield return new WaitForSeconds(attackInterval);
+        shootings[i].Fire(attackInterval, true);
+        yield return new WaitForSeconds(attackInterval);
+
+        /*
         if (i < shootings.Length-1)
           yield return new WaitForSeconds(attackInterval);
+          */
       }
-      //transform.Rotate(0,0,10, Space.Self);
-      yield return new WaitForSeconds(waitTime);
+
+      //yield return new WaitForSeconds(waitTime);
     }
   }
 }
