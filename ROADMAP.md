@@ -14,6 +14,7 @@
 
 ## Game
 
+- [ ] Hull screen bounds
 - [x] Player Movement
   - [x] Basic
   - [x] Hull (using center of ship. Can be more sophisticated using the

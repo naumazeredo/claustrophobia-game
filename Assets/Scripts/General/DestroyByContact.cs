@@ -2,7 +2,7 @@
 
 public class DestroyByContact : MonoBehaviour {
   void OnTriggerEnter2D(Collider2D col)  {
-    if (col.CompareTag("Hull"))
+    if (col.CompareTag("Hull") || col.CompareTag("Bounds"))
       return;
 
     Destroy(gameObject);
