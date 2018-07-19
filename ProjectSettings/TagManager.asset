@@ -8,7 +8,6 @@ TagManager:
   - EnemyAttack
   - Hull
   - Enemy
-  - GameCoordinator
   - Bounds
   - Spawn
   layers:

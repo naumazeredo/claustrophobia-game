@@ -9,14 +9,15 @@ public class Spawn {
   public Quaternion rotation;
 
   public Spawn(GameObject gameObject, Transform transform_) {
+    // POG
     Object obj = PrefabUtility.GetCorrespondingObjectFromSource(gameObject);
     prefab = (GameObject) AssetDatabase.LoadAssetAtPath(
       AssetDatabase.GetAssetPath(obj),
       typeof(GameObject)
     );
 
-    position = transform_.localPosition;
-    rotation = transform_.localRotation;
+    position = transform_.position;
+    rotation = transform_.rotation;
   }
 }
 
@@ -32,8 +33,10 @@ public class Spawner : MonoBehaviour {
   IEnumerator Spawn() {
     Instantiate(unit, transform.position, transform.rotation);
 
+    // TODO: implement delayed spawn for side spawners?
+
     GetComponent<SpriteRenderer>().enabled = false;
-    Destroy(gameObject);
+    gameObject.SetActive(false);
     yield return null;
   }
 

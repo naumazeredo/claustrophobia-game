@@ -3,22 +3,23 @@
 public class UnitHealth : MonoBehaviour {
   public int health = 1;
 
-  /*
-  void OnTriggerEnter2D(Collider2D col) {
-    if (col.CompareTag("Hull")) return;
-    if (col.CompareTag("Bounds")) return;
-    if (col.CompareTag("Spawn")) return;
+  GameController gameController;
 
-    TakeDamage();
+  void Start() {
+    gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
   }
-  */
 
   public void TakeDamage() {
     health--;
 
     if (health <= 0) {
-      // XXX
-      Destroy(gameObject);
+      if (CompareTag("Enemy")) {
+        gameController.AddEnemyDeath();
+        gameController.AddEnemyKill(gameObject);
+      }
+
+      gameObject.SetActive(false);
+      //Destroy(gameObject);
     }
   }
 }

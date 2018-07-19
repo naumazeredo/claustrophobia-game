@@ -13,8 +13,9 @@ public class DestroyByContact : MonoBehaviour {
       col.GetComponent<PlayerHealth>().TakeDamage();
     } else {
       var Health = col.GetComponent<UnitHealth>();
-      if(Health != null)
+      if (Health != null) {
         Health.TakeDamage();
+      }
     }
   }
 }

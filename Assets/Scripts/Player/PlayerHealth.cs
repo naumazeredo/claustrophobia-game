@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour {
 
   SpriteRenderer spriteRenderer;
   Transform hullTransform;
-  GameCoordinator gameCoordinator;
+  GameController gameController;
 
   void Start () {
     currentHealth = totalHealth;
@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour {
     spriteRenderer = GetComponent<SpriteRenderer>();
     hullTransform = GameObject.FindWithTag("Hull").transform;
 
-    gameCoordinator = GameObject.FindWithTag("GameCoordinator").GetComponent<GameCoordinator>();
+    gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
   }
 
   public void TakeDamage() {
@@ -31,7 +31,7 @@ public class PlayerHealth : MonoBehaviour {
     currentHealth--;
     if (currentHealth <= 0) {
       gameObject.SetActive(false);
-      gameCoordinator.GameOver();
+      gameController.GameOver();
       return;
     }
 

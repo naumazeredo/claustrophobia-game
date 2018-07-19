@@ -5,7 +5,6 @@ public class PlayerMovement : MonoBehaviour {
   public float hullPushForce = 10f;
 
   Rigidbody2D rb;
-  Collider2D playerCollider;
 
   GameObject hull;
   CircleCollider2D hullCollider;
@@ -18,7 +17,6 @@ public class PlayerMovement : MonoBehaviour {
 
   void Start () {
     rb = GetComponent<Rigidbody2D>();
-    playerCollider = GetComponent<Collider2D>();
     animator = GetComponent<Animator>();
 
     hull = GameObject.FindWithTag("Hull");
@@ -43,8 +41,6 @@ public class PlayerMovement : MonoBehaviour {
   public void FixedUpdate() {
     var rad = hullCollider.radius*hull.transform.localScale.x - GetComponent<CircleCollider2D>().radius;
     var center = (Vector2)hull.transform.position;
-
-    ColliderDistance2D colDistance = hullCollider.Distance(playerCollider);
 
     var dist = center - (Vector2)transform.position;
     if (dist.magnitude > rad) {
