@@ -78,8 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e8e638b71f9b462ea8e00567b820378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1740037418983276, guid: b4551a800e5334daeb168c6edf1a32f0, type: 2}
-  delay: 0
+  unit: {fileID: 1740037418983276, guid: b4551a800e5334daeb168c6edf1a32f0, type: 2}
 --- !u!212 &212092353585306514
 SpriteRenderer:
   m_ObjectHideFlags: 1

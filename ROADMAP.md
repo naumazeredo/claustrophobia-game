@@ -9,8 +9,12 @@
 - Power up: extra shots
 - Power up: wide shots
 - Power up: piercing shots
+- Power up: shield (blue hull)
+- Power up: hull mass reduction
+- Power up: health up
 - Joystick controls
 - Free aim / Free movement
+- Hull color -> Health color
 
 
 # Decided
