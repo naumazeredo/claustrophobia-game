@@ -7,6 +7,8 @@ public class ForwardMover : MonoBehaviour {
 
   void Start() {
     rb = GetComponent<Rigidbody2D>();
+  }
+  void Update() {
     rb.velocity = speed * transform.up;
   }
 }

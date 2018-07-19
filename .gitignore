@@ -49,3 +49,10 @@ desktop.ini
 # VSCode #
 # ====== #
 .vscode/
+
+# ====== #
+# Rider  #
+# ====== #
+*.idea/
+Assets/Plugins
+Assets/Plugins.meta

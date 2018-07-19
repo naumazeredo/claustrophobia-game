@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 114044275060431836}
   - component: {fileID: 114234267150560028}
   - component: {fileID: 114447171395109574}
+  - component: {fileID: 114432013042978766}
+  - component: {fileID: 114109532341848306}
   m_Layer: 11
   m_Name: Player
   m_TagString: Player
@@ -139,7 +141,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.0625
+  m_Radius: 0.02
 --- !u!114 &114044275060431836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -152,7 +154,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  hullPushForce: 2
+  hullPushForce: 4
+--- !u!114 &114109532341848306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1499213584275946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e151f95c37e7edb448f1cc0f9a43383d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114234267150560028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -166,8 +179,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireDelay: 0.2
   basicShooting: {fileID: 114549777145197022}
-  boiStyle: 0
+  boiStyle: 1
   boiShooting: {fileID: 114864097634348448}
+--- !u!114 &114432013042978766
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1499213584275946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e151f95c37e7edb448f1cc0f9a43383d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114447171395109574
 MonoBehaviour:
   m_ObjectHideFlags: 1
