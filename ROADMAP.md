@@ -5,6 +5,8 @@
 - Deform hull (test spring) (use a single sprite for hull and shader to match)
 - Attack independent of movement (BoI, EtG)
 - Enemies not killed respawn (or give rankings based on # enemies killed / pacifist)
+- Boss enter after all units are dead!
+- Boss entrance "cutscene"
 
 # Decided
 
@@ -29,7 +31,7 @@
   - [x] Dummy enemy
   - [x] ZigZag enemy
   - [x] Spiked
-  - [ ] First boss
+  - [x] First boss
 - [x] Player health (hull shrink)
   - [x] Enemy attack interaction (invul time)
 - [ ] Level design
@@ -39,7 +41,7 @@
 - [ ] Power ups
 - [ ] UI
   - [ ] Basic UI
-  - [ ] Game Over
+  - [x] Game Over
 
 ## Art
 
@@ -71,8 +73,5 @@
 
 # BUGS
 
-- [ ] Unity
-  - [ ] "Screen position out of view frustum" -> Probably because of camera
-      size?
 - [ ] Player getting out of hull (collider too small, need to reposition when
     hull gets smaller)
