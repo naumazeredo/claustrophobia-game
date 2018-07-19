@@ -17,9 +17,12 @@ public class PlayerMovement : MonoBehaviour {
   Vector2 input;
   Vector2 lastInput; // Used to avoid ghost key-ups and maintain rotation
 
+  Animator animator;
+
   void Start () {
     rb = GetComponent<Rigidbody2D>();
     playerCollider = GetComponent<Collider2D>();
+    animator = gameObject.GetComponent<Animator>();
 
     hull = GameObject.FindWithTag("Hull");
     hullCollider = hull.GetComponent<Collider2D>();
@@ -35,13 +38,14 @@ public class PlayerMovement : MonoBehaviour {
 
     input = new Vector2(inputX, inputY);
     input.Normalize();
+    animator.SetFloat("speedx", inputX);
 
     // FIXME: Isso nao funciona se o objeto for ser empurrado por forcas externas...
     rb.velocity = input * speed;
 
     if (input != Vector2.zero && input == lastInput) {
       angle = -Mathf.Atan2(inputX, inputY) * Mathf.Rad2Deg;
-      transform.localRotation = Quaternion.Euler(0, 0, angle);
+      //transform.localRotation = Quaternion.Euler(0, 0, angle);
     }
 
     lastInput = input;
