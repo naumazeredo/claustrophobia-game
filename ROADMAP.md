@@ -1,7 +1,6 @@
 # Ideas / Not decided
 
 - Attacks inside hull move in slow mode
-- Attack independent of movement (BoI, EtG)
 - Boss shoot lasers to the sides
 - Usable: Blank shot
 - Usable: Dash (player moves forward, hull teleports/moves with player and kills
@@ -12,7 +11,6 @@
 - Joystick controls
 - Free aim / Free movement
 
-
 # Decided
 
 ## To do
@@ -20,6 +18,7 @@
 - 8 directions (instead of free move)
 - Ranking system: show enemies killed, damage taken and the ranking (FEDCBASP)
 - Scripted levels
+- Boss Collision
 
 ## Ignored
 - XXX Deform hull (test spring) (use a single sprite for hull and shader to match)
