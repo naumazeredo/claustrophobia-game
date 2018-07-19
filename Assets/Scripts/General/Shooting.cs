@@ -11,6 +11,20 @@ public class Shooting : MonoBehaviour {
     }
   }
 
+  public void Fire(Vector2 direction) {
+    foreach (var loc in shootLocations) {
+      Instantiate(
+        attack,
+        loc.position,
+        Quaternion.Euler(
+          0f,
+          0f,
+          -Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg
+        )
+      );
+    }
+  }
+
   public void Fire(float duration, bool reverse = false) {
     StartCoroutine(FireStride(duration / (shootLocations.Length + 1), reverse));
   }

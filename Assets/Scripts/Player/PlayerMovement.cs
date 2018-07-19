@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour {
     // FIXME: Isso nao funciona se o objeto for ser empurrado por forcas externas...
     rb.velocity = input * speed;
 
-    if (input.magnitude > Mathf.Epsilon && input == lastInput) {
+    if (input != Vector2.zero && input == lastInput) {
       angle = -Mathf.Atan2(inputX, inputY) * Mathf.Rad2Deg;
       transform.localRotation = Quaternion.Euler(0, 0, angle);
     }
