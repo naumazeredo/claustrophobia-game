@@ -8,12 +8,8 @@
 - Power up: extra shots
 - Power up: wide shots
 - Power up: piercing shots
-- Power up: shield (blue hull)
-- Power up: hull mass reduction
-- Power up: health up
 - Joystick controls
 - Free aim / Free movement
-- Hull color -> Health color
 
 # Decided
 
@@ -22,7 +18,6 @@
 - 8 directions (instead of free move)
 - Ranking system: show enemies killed, damage taken and the ranking (FEDCBASP)
 - Scripted levels
-- Boss Collision
 
 ## Ignored
 - XXX Deform hull (test spring) (use a single sprite for hull and shader to match)
@@ -89,6 +84,3 @@
 
 
 # BUGS
-
-- [ ] Player getting out of hull (collider too small, need to reposition when
-    hull gets smaller)

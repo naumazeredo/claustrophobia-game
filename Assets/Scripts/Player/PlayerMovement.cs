@@ -4,6 +4,8 @@ public class PlayerMovement : MonoBehaviour {
   public float speed = 150f;
   public float hullPushForce = 10f;
 
+  private GameCoordinator gameCoordinator;
+
   Rigidbody2D rb;
 
   GameObject hull;
@@ -16,6 +18,8 @@ public class PlayerMovement : MonoBehaviour {
   Animator animator;
 
   void Start () {
+    gameCoordinator = GameObject.FindWithTag("GameCoordinator").GetComponent<GameCoordinator>();
+
     rb = GetComponent<Rigidbody2D>();
     animator = GetComponent<Animator>();
 
@@ -24,10 +28,12 @@ public class PlayerMovement : MonoBehaviour {
   }
 
   void Update () {
-    inputX = Input.GetAxis("Horizontal");
+    KeyMapper keyMapper = gameCoordinator.keyMapper;
+
+    inputX = Input.GetAxis(keyMapper.getHorizontalMov());
     inputX = Mathf.Abs(inputX) < Mathf.Epsilon ? 0f : Mathf.Sign(inputX);
 
-    inputY = Input.GetAxis("Vertical");
+    inputY = Input.GetAxis(keyMapper.getVerticalMov());
     inputY = Mathf.Abs(inputY) < Mathf.Epsilon ? 0f : Mathf.Sign(inputY);
 
     input = new Vector2(inputX, inputY);

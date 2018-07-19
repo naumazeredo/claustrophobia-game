@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
+  public KeyMapper keyMapper;
+
   /* ----- GAME OVER ------ */
   public Text[] gameOverTexts;
   public float gameOverTimeScale = .2f;
@@ -20,6 +22,8 @@ public class GameController : MonoBehaviour {
   /* -----   LEVEL   ------ */
 
   void Start () {
+    keyMapper = new KeyMapper();
+
     foreach (var text in gameOverTexts)
       text.enabled = false;
 
@@ -28,6 +32,9 @@ public class GameController : MonoBehaviour {
   }
 
   void Update () {
+    if (Input.GetKeyDown(KeyCode.I))
+      keyMapper.invert();
+
     if (gameOver) {
       if (Input.GetKeyDown(KeyCode.R)) {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
