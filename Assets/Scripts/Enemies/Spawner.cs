@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class SpawnPoint : MonoBehaviour {
+public class Spawner : MonoBehaviour {
   public GameObject enemy;
   public float delay;
 

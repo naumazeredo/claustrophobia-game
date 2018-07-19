@@ -1,17 +1,28 @@
 # Ideas / Not decided
 
 - Attacks inside hull move in slow mode
-- Scripted levels or procedural?
-- Deform hull (test spring) (use a single sprite for hull and shader to match)
-- Attack independent of movement (BoI, EtG)
-- Enemies not killed respawn (or give rankings based on # enemies killed / pacifist)
-- Boss enter after all units are dead!
-- Boss entrance "cutscene"
+- Boss shoot lasers to the sides
+- Usable: Blank shot
+- Usable: Dash (player moves forward, hull teleports/moves with player and kills
+    enemies inside)
+- Power up: extra shots
+- Power up: wide shots
+- Power up: piercing shots
+- Joystick controls
+- Free aim / Free movement
 
 # Decided
 
+## To do
 - X levels (+ new game plus, if we have time)
 - 8 directions (instead of free move)
+- Ranking system: show enemies killed, damage taken and the ranking (FEDCBASP)
+- Scripted levels
+- Boss Collision
+
+## Ignored
+- XXX Deform hull (test spring) (use a single sprite for hull and shader to match)
+
 
 # Roadmap
 
@@ -32,6 +43,7 @@
   - [x] ZigZag enemy
   - [x] Spiked
   - [x] First boss
+  - [ ] Boss entrance (after all units are dead)
 - [x] Player health (hull shrink)
   - [x] Enemy attack interaction (invul time)
 - [ ] Level design
@@ -42,6 +54,7 @@
 - [ ] UI
   - [ ] Basic UI
   - [x] Game Over
+- [ ] Ranking system
 
 ## Art
 
@@ -59,7 +72,7 @@
   - [ ] Enemy attack
   - [ ] Player damage
   - [ ] Player explosion
-  - [ ] Enemy 
+  - [ ] Enemy explosion
 
 ## Extra
 

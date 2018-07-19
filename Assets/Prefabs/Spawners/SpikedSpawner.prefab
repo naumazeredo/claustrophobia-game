@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61299785361154888}
   - component: {fileID: 212092353585306514}
   m_Layer: 0
-  m_Name: SpikedSpawnPoint
+  m_Name: SpikedSpawner
   m_TagString: Spawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
