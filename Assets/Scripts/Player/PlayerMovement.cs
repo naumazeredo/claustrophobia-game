@@ -4,7 +4,7 @@ public class PlayerMovement : MonoBehaviour {
   public float speed = 150f;
   public float hullPushForce = 10f;
 
-  private GameCoordinator gameCoordinator;
+  private GameController gameController;
 
   Rigidbody2D rb;
 
@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour {
   Animator animator;
 
   void Start () {
-    gameCoordinator = GameObject.FindWithTag("GameCoordinator").GetComponent<GameCoordinator>();
+    gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
 
     rb = GetComponent<Rigidbody2D>();
     animator = GetComponent<Animator>();
@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour {
   }
 
   void Update () {
-    KeyMapper keyMapper = gameCoordinator.keyMapper;
+    KeyMapper keyMapper = gameController.keyMapper;
 
     inputX = Input.GetAxis(keyMapper.getHorizontalMov());
     inputX = Mathf.Abs(inputX) < Mathf.Epsilon ? 0f : Mathf.Sign(inputX);

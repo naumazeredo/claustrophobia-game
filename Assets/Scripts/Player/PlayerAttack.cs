@@ -6,11 +6,10 @@ public class PlayerAttack : MonoBehaviour {
   public float fireDelay = 0.2f;
   public Shooting basicShooting;
 
-  private GameCoordinator gameCoordinator;
-
   public bool boiStyle;
   public Shooting boiShooting;
 
+  GameController gameController;
 
   bool fired;
 
@@ -18,7 +17,7 @@ public class PlayerAttack : MonoBehaviour {
   Vector2 input;
 
   void Start () {
-    gameCoordinator = GameObject.FindWithTag("GameCoordinator").GetComponent<GameCoordinator>();
+    gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
   }
 
   void Update () {
@@ -28,7 +27,7 @@ public class PlayerAttack : MonoBehaviour {
           Attack();
         }
       } else {
-        KeyMapper keyMapper = gameCoordinator.keyMapper;
+        KeyMapper keyMapper = gameController.keyMapper;
         inputX = Input.GetAxis(keyMapper.getHorizontalFire());
         inputX = Mathf.Abs(inputX) < Mathf.Epsilon ? 0f : Mathf.Sign(inputX);
 
