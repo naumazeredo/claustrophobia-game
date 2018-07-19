@@ -233,9 +233,9 @@ GameObject:
   - component: {fileID: 212507601493030558}
   - component: {fileID: 58518220561235822}
   - component: {fileID: 50345548482008702}
-  - component: {fileID: 114135747431271664}
   - component: {fileID: 114504248326833404}
   - component: {fileID: 114056117080383978}
+  - component: {fileID: 114982106008010854}
   m_Layer: 10
   m_Name: SpikedEnemy
   m_TagString: Enemy
@@ -615,17 +615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efb63e6bf64ae433c8c0e73c08f3b4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114135747431271664
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1740037418983276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e151f95c37e7edb448f1cc0f9a43383d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114381672316498010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -678,6 +667,18 @@ MonoBehaviour:
   - {fileID: 4925826088646996}
   - {fileID: 4597244958504546}
   - {fileID: 4017540632656448}
+--- !u!114 &114982106008010854
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1740037418983276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56aaef09b1ae420db53655becdb1fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 2
 --- !u!212 &212507601493030558
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -69,8 +69,8 @@ GameObject:
   - component: {fileID: 50189472238557160}
   - component: {fileID: 114346661658323116}
   - component: {fileID: 114198314211958812}
-  - component: {fileID: 114890260361748754}
   - component: {fileID: 114560333585739944}
+  - component: {fileID: 114853070969616964}
   m_Layer: 10
   m_Name: MailgunEnemy
   m_TagString: Enemy
@@ -587,9 +587,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  moveTime: 2
   attackInterval: 1
-  waitTime: 2
   shootings:
   - {fileID: 114433637292217610}
 --- !u!114 &114346661658323116
@@ -636,7 +634,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efb63e6bf64ae433c8c0e73c08f3b4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114890260361748754
+--- !u!114 &114853070969616964
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -644,9 +642,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1174386498592140}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e151f95c37e7edb448f1cc0f9a43383d, type: 3}
+  m_Script: {fileID: 11500000, guid: b56aaef09b1ae420db53655becdb1fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 2
 --- !u!212 &212266762535279506
 SpriteRenderer:
   m_ObjectHideFlags: 1

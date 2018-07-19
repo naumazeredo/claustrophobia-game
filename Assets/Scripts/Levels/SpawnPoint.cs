@@ -5,6 +5,8 @@ public class SpawnPoint : MonoBehaviour {
   public GameObject enemy;
   public float delay;
 
+  //public bool boss;
+
   void OnTriggerEnter2D(Collider2D col) {
     if (col.CompareTag("Bounds")) {
       StartCoroutine(Spawn());

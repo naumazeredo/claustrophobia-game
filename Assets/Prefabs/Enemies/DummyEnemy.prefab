@@ -40,8 +40,8 @@ GameObject:
   - component: {fileID: 114952732159027096}
   - component: {fileID: 114981817345782612}
   - component: {fileID: 114896417574010564}
-  - component: {fileID: 114853028175033736}
   - component: {fileID: 114296913567695142}
+  - component: {fileID: 114105292015538620}
   m_Layer: 10
   m_Name: DummyEnemy
   m_TagString: Enemy
@@ -111,6 +111,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.125
+--- !u!114 &114105292015538620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1847839704752078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b56aaef09b1ae420db53655becdb1fc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
 --- !u!114 &114296913567695142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,17 +132,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efb63e6bf64ae433c8c0e73c08f3b4ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114853028175033736
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1847839704752078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e151f95c37e7edb448f1cc0f9a43383d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114896417574010564

@@ -11,10 +11,10 @@ public class DestroyByContact : MonoBehaviour {
 
     if (col.CompareTag("Player")) {
       col.GetComponent<PlayerHealth>().TakeDamage();
-      return;
+    } else if (col.CompareTag("Enemy")) {
+      col.GetComponent<UnitHealth>().TakeDamage();
+    } else {
+      //Destroy(col.gameObject);
     }
-
-    // TODO: Call explosion
-    Destroy(col.gameObject);
   }
 }
