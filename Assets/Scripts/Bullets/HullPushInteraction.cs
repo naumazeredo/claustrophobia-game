@@ -11,7 +11,7 @@ public class HullPushInteraction : MonoBehaviour {
     rb = GetComponent<Rigidbody2D>();
   }
 
-  void OnTriggerEnter2D(Collider2D col) {
+  void OnTriggerExit2D(Collider2D col) {
     if (pushed)
       return;
 
