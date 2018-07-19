@@ -9,32 +9,32 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1580582671963528}
+  m_RootGameObject: {fileID: 1660260802953072}
   m_IsPrefabAsset: 1
---- !u!1 &1580582671963528
+--- !u!1 &1660260802953072
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4482928287176146}
-  - component: {fileID: 114822942972505532}
-  - component: {fileID: 61193550866456058}
-  - component: {fileID: 212667966170681514}
+  - component: {fileID: 4874074092580402}
+  - component: {fileID: 114701701701442236}
+  - component: {fileID: 61438158142877712}
+  - component: {fileID: 212765440750520410}
   m_Layer: 0
-  m_Name: ZigZagSpawnPoint
+  m_Name: MailgunSpawner
   m_TagString: Spawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4482928287176146
+--- !u!4 &4874074092580402
 Transform:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1580582671963528}
+  m_GameObject: {fileID: 1660260802953072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -42,12 +42,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &61193550866456058
+--- !u!61 &61438158142877712
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1580582671963528}
+  m_GameObject: {fileID: 1660260802953072}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -67,25 +67,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1}
   m_EdgeRadius: 0
---- !u!114 &114822942972505532
+--- !u!114 &114701701701442236
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1580582671963528}
+  m_GameObject: {fileID: 1660260802953072}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e8e638b71f9b462ea8e00567b820378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1143139171182742, guid: a55c540b675e0e040b3014e521c53fed, type: 2}
+  enemy: {fileID: 1174386498592140, guid: 37d0e539bad59ad4b96106fc7a0a6156, type: 2}
   delay: 0
---- !u!212 &212667966170681514
+--- !u!212 &212765440750520410
 SpriteRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1580582671963528}
+  m_GameObject: {fileID: 1660260802953072}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -116,7 +116,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 51a17965db7164b028c0559c7a202302, type: 3}
-  m_Color: {r: 1, g: 0.8901961, b: 0.35686275, a: 1}
+  m_Color: {r: 1, g: 0.35686275, b: 0.9529412, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
