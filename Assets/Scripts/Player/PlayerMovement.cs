@@ -1,5 +1,4 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
   public float speed = 150f;
@@ -13,16 +12,14 @@ public class PlayerMovement : MonoBehaviour {
 
   float inputX;
   float inputY;
-  float angle;
   Vector2 input;
-  Vector2 lastInput; // Used to avoid ghost key-ups and maintain rotation
 
   Animator animator;
 
   void Start () {
     rb = GetComponent<Rigidbody2D>();
     playerCollider = GetComponent<Collider2D>();
-    animator = gameObject.GetComponent<Animator>();
+    animator = GetComponent<Animator>();
 
     hull = GameObject.FindWithTag("Hull");
     hullCollider = hull.GetComponent<CircleCollider2D>();
@@ -37,17 +34,10 @@ public class PlayerMovement : MonoBehaviour {
 
     input = new Vector2(inputX, inputY);
     input.Normalize();
-    animator.SetFloat("speedx", inputX);
 
-    // FIXME: Isso nao funciona se o objeto for ser empurrado por forcas externas...
     rb.velocity = input * speed;
 
-    if (input != Vector2.zero && input == lastInput) {
-      angle = -Mathf.Atan2(inputX, inputY) * Mathf.Rad2Deg;
-      //transform.localRotation = Quaternion.Euler(0, 0, angle);
-    }
-
-    lastInput = input;
+    animator.SetFloat("InputX", inputX);
   }
 
   public void FixedUpdate() {
@@ -55,7 +45,6 @@ public class PlayerMovement : MonoBehaviour {
     var center = (Vector2)hull.transform.position;
 
     ColliderDistance2D colDistance = hullCollider.Distance(playerCollider);
-    Debug.Log(colDistance.distance);
 
     var dist = center - (Vector2)transform.position;
     if (dist.magnitude > rad) {
