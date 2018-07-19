@@ -21,7 +21,8 @@ GameObject:
   - component: {fileID: 4968511056473322}
   - component: {fileID: 212949086841024950}
   - component: {fileID: 50787995952703690}
-  - component: {fileID: 68752268804231916}
+  - component: {fileID: 58924130035082410}
+  - component: {fileID: 58746879243398042}
   m_Layer: 0
   m_Name: Hull
   m_TagString: Hull
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1111368446748676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -62,8 +63,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!68 &68752268804231916
-EdgeCollider2D:
+--- !u!58 &58746879243398042
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -71,25 +72,27 @@ EdgeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0.01
-  m_Points:
-  - {x: -0.49795157, y: -0.0040967837}
-  - {x: -0.41066074, y: 0.2744846}
-  - {x: -0.24691904, y: 0.42747143}
-  - {x: -0.005050987, y: 0.48660704}
-  - {x: 0.2562363, y: 0.42624238}
-  - {x: 0.43654412, y: 0.23939955}
-  - {x: 0.48787647, y: -0.0006303787}
-  - {x: 0.42709813, y: -0.24538106}
-  - {x: 0.24406835, y: -0.42480975}
-  - {x: 0.0038638264, y: -0.48812765}
-  - {x: -0.23761761, y: -0.4342053}
-  - {x: -0.42440084, y: -0.2582674}
-  - {x: -0.49756736, y: -0.004096806}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!58 &58924130035082410
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111368446748676}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!212 &212949086841024950
 SpriteRenderer:
   m_ObjectHideFlags: 1

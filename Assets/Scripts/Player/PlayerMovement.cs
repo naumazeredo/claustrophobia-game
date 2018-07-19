@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour {
   public float speed = 150f;
@@ -8,8 +9,7 @@ public class PlayerMovement : MonoBehaviour {
   Collider2D playerCollider;
 
   GameObject hull;
-  Collider2D hullCollider;
-  Rigidbody2D hullRigidbody;
+  CircleCollider2D hullCollider;
 
   float inputX;
   float inputY;
@@ -25,8 +25,7 @@ public class PlayerMovement : MonoBehaviour {
     animator = gameObject.GetComponent<Animator>();
 
     hull = GameObject.FindWithTag("Hull");
-    hullCollider = hull.GetComponent<Collider2D>();
-    hullRigidbody = hull.GetComponent<Rigidbody2D>();
+    hullCollider = hull.GetComponent<CircleCollider2D>();
   }
 
   void Update () {
@@ -51,27 +50,20 @@ public class PlayerMovement : MonoBehaviour {
     lastInput = input;
   }
 
-  public void SeparateCollider() {
+  public void FixedUpdate() {
+    var rad = hullCollider.radius*hull.transform.localScale.x - GetComponent<CircleCollider2D>().radius;
+    var center = (Vector2)hull.transform.position;
+
     ColliderDistance2D colDistance = hullCollider.Distance(playerCollider);
-    if (colDistance.isValid && colDistance.distance < 0f) {
-      Vector3 delta = colDistance.distance * colDistance.normal;
+    Debug.Log(colDistance.distance);
 
-      transform.position -= delta;
-      rb.velocity = Vector2.zero;
+    var dist = center - (Vector2)transform.position;
+    if (dist.magnitude > rad) {
+      var delta = dist.normalized * (dist.magnitude - rad);
+      var deltaV3 = new Vector3(delta.x, delta.y, 0);
+      transform.position += deltaV3;
 
-      hullRigidbody.AddForce(hullPushForce * delta.normalized);
-    }
-  }
-
-  void OnTriggerEnter2D(Collider2D col) {
-    if (col.CompareTag("Hull")) {
-      SeparateCollider();
-    }
-  }
-
-  void OnTriggerStay2D(Collider2D col) {
-    if (col.CompareTag("Hull")) {
-      SeparateCollider();
+      hull.GetComponent<Rigidbody2D>().AddForce(-hullPushForce * dist.normalized);
     }
   }
 }
