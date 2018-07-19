@@ -236,6 +236,7 @@ GameObject:
   - component: {fileID: 114504248326833404}
   - component: {fileID: 114056117080383978}
   - component: {fileID: 114982106008010854}
+  - component: {fileID: 114518631224971370}
   m_Layer: 10
   m_Name: SpikedEnemy
   m_TagString: Enemy
@@ -650,6 +651,17 @@ MonoBehaviour:
   shootings:
   - {fileID: 114381672316498010}
   - {fileID: 114793867543261896}
+--- !u!114 &114518631224971370
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1740037418983276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e151f95c37e7edb448f1cc0f9a43383d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114793867543261896
 MonoBehaviour:
   m_ObjectHideFlags: 1
