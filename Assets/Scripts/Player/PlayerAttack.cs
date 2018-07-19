@@ -1,12 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour {
   public float fireDelay = 0.2f;
   public Shooting basicShooting;
 
+  private GameCoordinator gameCoordinator;
+
   public bool boiStyle;
   public Shooting boiShooting;
+
 
   bool fired;
 
@@ -14,6 +18,7 @@ public class PlayerAttack : MonoBehaviour {
   Vector2 input;
 
   void Start () {
+    gameCoordinator = GameObject.FindWithTag("GameCoordinator").GetComponent<GameCoordinator>();
   }
 
   void Update () {
@@ -23,10 +28,11 @@ public class PlayerAttack : MonoBehaviour {
           Attack();
         }
       } else {
-        inputX = Input.GetAxis("FireHorizontal");
+        KeyMapper keyMapper = gameCoordinator.keyMapper;
+        inputX = Input.GetAxis(keyMapper.getHorizontalFire());
         inputX = Mathf.Abs(inputX) < Mathf.Epsilon ? 0f : Mathf.Sign(inputX);
 
-        inputY = Input.GetAxis("FireVertical");
+        inputY = Input.GetAxis(keyMapper.getVerticalFire());
         inputY = Mathf.Abs(inputY) < Mathf.Epsilon ? 0f : Mathf.Sign(inputY);
 
         input = new Vector2(inputX, inputY);
