@@ -23,7 +23,11 @@ GameObject:
   - component: {fileID: 50787995952703690}
   - component: {fileID: 58746879243398042}
   - component: {fileID: 114909309496329262}
+<<<<<<< HEAD
   - component: {fileID: 95955675303371706}
+=======
+  - component: {fileID: 114776734345650428}
+>>>>>>> b242cdfea328f40117f988f644f6d7f9adc652b8
   m_Layer: 0
   m_Name: Hull
   m_TagString: Hull
@@ -79,14 +83,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+<<<<<<< HEAD
 --- !u!95 &95955675303371706
 Animator:
   serializedVersion: 3
+=======
+--- !u!114 &114776734345650428
+MonoBehaviour:
+>>>>>>> b242cdfea328f40117f988f644f6d7f9adc652b8
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1111368446748676}
   m_Enabled: 1
+<<<<<<< HEAD
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: cfba4d2586160614ba0996b6ead4b605, type: 2}
   m_CullingMode: 0
@@ -97,6 +107,13 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+=======
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617fb872e60be4c7898d0864889c6801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageHate: 2
+>>>>>>> b242cdfea328f40117f988f644f6d7f9adc652b8
 --- !u!114 &114909309496329262
 MonoBehaviour:
   m_ObjectHideFlags: 1

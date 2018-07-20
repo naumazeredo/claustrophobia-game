@@ -22,7 +22,12 @@ public class GameController : MonoBehaviour {
   int levelEnemyCount;
   List<Image> enemiesKilled;
 
-  public GameObject enemiesKilledImagesParent;
+  public Image ranking;
+  public int rankingEnemyAreaWidth = 350;
+  public int rankingEnemyAreaStart = 50;
+  public float rankingEnterWait = 1.5f;
+  public float rankingExitWait = 1.5f;
+  public float rankingEnemyInterval = 0.1f;
   /* -----   LEVEL   ------ */
 
   /* ----- FLASH ----- */
@@ -82,14 +87,20 @@ public class GameController : MonoBehaviour {
   /* ----- GAME OVER ------ */
 
   /* -----   LEVEL   ------ */
-  public void RegisterLevel(Level level, int enemyCount) {
+  public void RegisterLevel(Level level) {
     currentLevel = level;
-    levelEnemyCount = enemyCount;
+    levelEnemyCount = level.spawns.Length;
 
-    if (levelEnemyCount == 0) {
+    if (levelEnemyCount == 0 && currentLevel.bossPrefab == null) {
+      Debug.LogWarning("Empty level! No enemies and no boss!");
+      return;
     }
 
-    StartLevel();
+    if (levelEnemyCount == 0) {
+      StartCoroutine(SpawnBoss());
+    } else {
+      StartLevel();
+    }
   }
 
   public void StartLevel() {
@@ -107,26 +118,39 @@ public class GameController : MonoBehaviour {
 
     if (levelEnemyCount == 0 && currentLevel.bossPrefab != null) {
       StartCoroutine(SpawnBoss());
-    } else if (levelEnemyCount < 0 || currentLevel.bossPrefab == null) {
+    } else if (levelEnemyCount < 0 || (levelEnemyCount == 0 && currentLevel.bossPrefab == null)) {
       levelPlaying = false;
-      ShowRanking();
+      StartCoroutine(ShowRanking());
     }
   }
 
   public void AddEnemyKill(GameObject enemy) {
-    var obj = new GameObject();
-    Image enemyImage = obj.AddComponent<Image>();
-    enemyImage.sprite = enemy.GetComponent<SpriteRenderer>().sprite;
-    enemyImage.color = enemy.GetComponent<SpriteRenderer>().color;
-    obj.GetComponent<RectTransform>().SetParent(enemiesKilledImagesParent.transform);
-    obj.SetActive(false);
-  }
+    var obj = new GameObject("EnemyKill-" + enemy.name);
+    Image image = obj.AddComponent<Image>();
+    RectTransform rectTransform = obj.GetComponent<RectTransform>();
 
-  public void ShowRanking() {
+    SpriteRenderer enemySpriteRenderer = enemy.GetComponent<SpriteRenderer>();
+
+    image.sprite = enemySpriteRenderer.sprite;
+    image.color = enemySpriteRenderer.color;
+
+    rectTransform.SetParent(ranking.transform, false);
+    obj.SetActive(false);
+
+    rectTransform.sizeDelta = new Vector2(
+      enemySpriteRenderer.sprite.rect.width,
+      enemySpriteRenderer.sprite.rect.height
+    );
+    rectTransform.localScale = new Vector3(1f, 1f, 1f);
+    rectTransform.anchorMin = new Vector2(0f, 0.5f);
+    rectTransform.anchorMax = new Vector2(0f, 0.5f);
+
+    enemiesKilled.Add(image);
   }
 
   IEnumerator SpawnBoss() {
     Flash();
+
     var boss = Instantiate(currentLevel.bossPrefab, Vector3.zero, Quaternion.identity);
 
     boss.GetComponents<MonoBehaviour>().ToList().ForEach(c => c.enabled = false);
@@ -137,6 +161,32 @@ public class GameController : MonoBehaviour {
     yield return new WaitForSeconds(3f);
 
     boss.GetComponents<MonoBehaviour>().ToList().ForEach(c => c.enabled = true);
+  }
+
+  IEnumerator ShowRanking() {
+    Flash();
+    ranking.gameObject.SetActive(true);
+
+    yield return new WaitForSeconds(rankingEnterWait);
+
+    float stride = Mathf.Min(8f, (float) rankingEnemyAreaWidth / enemiesKilled.Count);
+    float posx = rankingEnemyAreaStart;
+
+    foreach (var enemy in enemiesKilled) {
+      enemy.gameObject.SetActive(true);
+      enemy.GetComponent<RectTransform>().anchoredPosition = new Vector2(posx, 0);
+      posx += stride;
+
+      yield return new WaitForSeconds(rankingEnemyInterval);
+    }
+
+    yield return new WaitForSeconds(rankingExitWait);
+
+    ranking.gameObject.SetActive(false);
+    foreach (var enemy in enemiesKilled)
+      Destroy(enemy);
+
+    yield return null;
   }
   /* -----   LEVEL   ------ */
 

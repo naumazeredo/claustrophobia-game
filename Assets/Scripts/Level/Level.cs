@@ -10,7 +10,7 @@ public class Level : MonoBehaviour {
 
   void Start () {
     gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
-    gameController.RegisterLevel(this, spawns.Length);
+    gameController.RegisterLevel(this);
   }
 
   public void StartLevel() {
