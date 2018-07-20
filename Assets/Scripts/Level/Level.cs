@@ -5,25 +5,19 @@ using UnityEditor;
 
 public class Level : MonoBehaviour {
   public Spawn[] spawns;
-  public GameObject boss;
+  public GameObject bossPrefab;
 
   GameController gameController;
 
   void Start () {
+    Debug.Log("Start");
+
     gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
     gameController.RegisterLevel(this, spawns.Length);
   }
 
-  public void SpawnBoss() {
-    StartCoroutine(SpawnBossCoroutine());
-  }
-
-  IEnumerator SpawnBossCoroutine() {
-    Debug.Log("Spawn Boss!!!");
-    yield return null;
-  }
-
   public void StartLevel() {
+    Debug.Log("StartLevel");
     var children = new List<GameObject>();
     for (int i = 0; i < transform.childCount; i++)
       children.Add(transform.GetChild(i).gameObject);

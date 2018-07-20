@@ -3,8 +3,17 @@ using UnityEngine;
 using UnityEditor;
 
 public class LevelDesignWindow : EditorWindow {
+  [SerializeField]
   string levelName;
+
+  [SerializeField]
   GameObject boss;
+
+  [SerializeField]
+  bool testOnPlay;
+
+  [SerializeField]
+  bool onPlaymode;
 
   [MenuItem("Window/Level Designer")]
   static void Init() {
@@ -13,6 +22,7 @@ public class LevelDesignWindow : EditorWindow {
       false, "Level Designer"
     );
     window.Show();
+
   }
 
   void OnGUI() {
@@ -28,6 +38,7 @@ public class LevelDesignWindow : EditorWindow {
     levelName = EditorGUILayout.TextField("Name", levelName);
     boss = (GameObject) EditorGUILayout.ObjectField("Boss", boss, typeof(GameObject), false);
 
+    /*
     if (boss != null && boss.GetComponent<Spawner>() == null) {
       EditorUtility.DisplayDialog(
         "No Spawner",
@@ -37,6 +48,7 @@ public class LevelDesignWindow : EditorWindow {
 
       boss = null;
     }
+    */
 
     GUILayout.Space(8f);
 
@@ -49,12 +61,47 @@ public class LevelDesignWindow : EditorWindow {
       DeleteSpawners();
       GUIUtility.ExitGUI();
     }
+
+    EditorGUI.BeginDisabledGroup(EditorApplication.isPlaying);
+
+    testOnPlay = EditorGUILayout.Toggle("Test Level on Play", testOnPlay);
+
+    EditorGUI.EndDisabledGroup();
+  }
+
+  void Update() {
+    if (!testOnPlay)
+      return;
+
+    if (EditorApplication.isPlaying && !onPlaymode) {
+      CreateLevel("Level Test");
+
+      GameObject.FindGameObjectsWithTag("Spawn")
+        .ToList()
+        .ForEach(c => c.gameObject.SetActive(false));
+
+      onPlaymode = true;
+    }
+
+    if (!EditorApplication.isPlaying && onPlaymode) {
+      onPlaymode = false;
+    }
   }
 
   Spawn[] GenerateSpawns() {
     return GameObject.FindGameObjectsWithTag("Spawn")
       .Select(n => n.GetComponent<Spawner>().ToSpawn())
       .ToArray();
+  }
+
+  GameObject CreateLevel(string objName) {
+    var level = new GameObject(objName);
+    var levelComponent = level.AddComponent<Level>();
+
+    levelComponent.spawns = GenerateSpawns();
+    levelComponent.bossPrefab = boss;
+
+    return level;
   }
 
   public void SaveLevel() {
@@ -67,12 +114,7 @@ public class LevelDesignWindow : EditorWindow {
       return;
     }
 
-    var level = new GameObject(levelName);
-    level.AddComponent<Level>();
-
-    var levelComponent = level.GetComponent<Level>();
-    levelComponent.spawns = GenerateSpawns();
-    levelComponent.boss = boss;
+    var level = CreateLevel(levelName);
 
     string path = "Assets/Prefabs/Levels/" + levelName + ".prefab";
 
