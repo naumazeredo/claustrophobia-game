@@ -89,10 +89,12 @@ public class GameController : MonoBehaviour {
   }
 
   public void AddEnemyKill(GameObject enemy) {
+    /* 
     enemy.GetComponents<MonoBehaviour>().ToList().ForEach(c => c.enabled = false);
     enemy.GetComponent<SpriteRenderer>().enabled = true;
 
     enemiesKilled.Add(enemy);
+*/
   }
 
   public void ShowRanking() {
