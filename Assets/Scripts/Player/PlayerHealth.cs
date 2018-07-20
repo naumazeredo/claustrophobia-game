@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Specialized;
 using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour {
@@ -14,10 +15,12 @@ public class PlayerHealth : MonoBehaviour {
   SpriteRenderer spriteRenderer;
   Transform hullTransform;
   ParticleSystem hullEffect;
+  private PlayerMode playerMode;
 
   GameController gameController;
 
   void Start () {
+    playerMode = GetComponent<PlayerMode>();
     currentHealth = totalHealth;
 
     spriteRenderer = GetComponent<SpriteRenderer>();
@@ -28,7 +31,7 @@ public class PlayerHealth : MonoBehaviour {
   }
 
   public void TakeDamage() {
-    if (invincible)
+    if (invincible || playerMode.IsInvencible())
       return;
 
     currentHealth--;

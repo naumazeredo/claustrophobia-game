@@ -20,8 +20,8 @@ public class PlayerMode : MonoBehaviour {
 	private Shooting shooting;
 	private Vector2 dashDir;
 	private Rigidbody2D rb, hullRb;
-	private float hullMass;
-	private float hullDrag;
+
+	private bool invencible;
 
 
 	// Use this for initialization
@@ -30,9 +30,6 @@ public class PlayerMode : MonoBehaviour {
 		dashDir = new Vector2(0, 1);
 		rb = GetComponent<Rigidbody2D>();
 		hullRb = GameObject.FindWithTag("Hull").GetComponent<Rigidbody2D>();
-		hullMass = hullRb.mass;
-		hullDrag = hullRb.drag;
-
 
 		Change(mode);
 	}
@@ -41,9 +38,9 @@ public class PlayerMode : MonoBehaviour {
 		if (mode == Mode.dashing) {
 			if (rb.velocity.magnitude < 0.1f) {
 				rb.drag = 0.0f;
-				hullRb.mass = hullMass;
-				hullRb.drag = hullDrag;
 				hullRb.velocity = Vector2.zero;
+
+				invencible = false;
 				Change(Mode.normal);
 			}
 		}
@@ -52,10 +49,10 @@ public class PlayerMode : MonoBehaviour {
 	public void Change(Mode newMode) {
 		switch (newMode) {
 			case Mode.dashing:
+				invencible = true;
 				shooting.attack = null;
 				rb.velocity = dashDir * dashIntensity;
 				rb.drag = dashDrag;
-				//hullRb.mass = 5;
 				break;
 			case Mode.piercing:
 				shooting.attack = piercingBullet;
@@ -67,6 +64,10 @@ public class PlayerMode : MonoBehaviour {
 		}
 
 		mode = newMode;
+	}
+
+	public bool IsInvencible() {
+		return invencible;
 	}
 }
 

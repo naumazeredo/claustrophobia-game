@@ -6,10 +6,11 @@ public class PlayerMovement : MonoBehaviour {
 
   private GameController gameController;
 
-  Rigidbody2D rb;
+  Rigidbody2D rb, hullRb;
 
   GameObject hull;
   CircleCollider2D hullCollider;
+  private PlayerMode playerMode;
 
   float inputX;
   float inputY;
@@ -20,10 +21,12 @@ public class PlayerMovement : MonoBehaviour {
   void Start () {
     gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
 
+    playerMode = GetComponent<PlayerMode>();
     rb = GetComponent<Rigidbody2D>();
     animator = GetComponent<Animator>();
 
     hull = GameObject.FindWithTag("Hull");
+    hullRb = GetComponent<Rigidbody2D>();
     hullCollider = hull.GetComponent<CircleCollider2D>();
   }
 
@@ -49,13 +52,19 @@ public class PlayerMovement : MonoBehaviour {
   void LateUpdate() {
     var rad = hullCollider.radius*hull.transform.localScale.x - GetComponent<CircleCollider2D>().radius;
     var center = (Vector2)hull.transform.position;
-
     var dist = center - (Vector2)transform.position;
-    if (dist.magnitude > rad) {
-      var delta = dist.normalized * (dist.magnitude - rad);
-      var deltaV3 = new Vector3(delta.x, delta.y, 0);
-      transform.position += deltaV3;
 
+    if (!(dist.magnitude > rad)) return;
+
+    var delta = dist.normalized * (dist.magnitude - rad);
+    var deltaV3 = new Vector3(delta.x, delta.y, 0);
+
+    if (playerMode.mode == PlayerMode.Mode.dashing) {
+      hull.transform.position -= deltaV3;
+      hullRb.velocity = rb.velocity;
+    }
+    else {
+      transform.position += deltaV3;
       hull.GetComponent<Rigidbody2D>().AddForce(-hullPushForce * dist.normalized);
     }
   }
