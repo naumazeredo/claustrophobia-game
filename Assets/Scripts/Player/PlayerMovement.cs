@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour {
   }
 
   void Update () {
+    if (GetComponent<PlayerMode>().mode == PlayerMode.Mode.dashing) return;
+
     KeyMapper keyMapper = gameController.keyMapper;
 
     inputX = Input.GetAxis(keyMapper.getHorizontalMov());
