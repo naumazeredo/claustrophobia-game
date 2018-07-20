@@ -12,6 +12,8 @@ public class Shooting : MonoBehaviour {
   }
 
   public void Fire(Vector2 direction) {
+    if (attack == null) return;
+
     foreach (var loc in shootLocations) {
       Instantiate(
         attack,
