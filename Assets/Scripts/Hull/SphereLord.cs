@@ -14,12 +14,12 @@ public class SphereLord : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (player.GetComponent<PlayerMode>().mode == PlayerMode.Mode.sphereLord)
+		if (player.GetComponent<PlayerMode>().mode == PlayerMode.Mode.dashing)
 			transform.position = player.transform.position;
 	}
 
 	void OnTriggerStay2D(Collider2D col) {
-		if (player.GetComponent<PlayerMode>().mode != PlayerMode.Mode.sphereLord || damageGiven)
+		if (player.GetComponent<PlayerMode>().mode != PlayerMode.Mode.dashing || damageGiven)
 			return;
 
 		UnitHealth health = col.GetComponent<UnitHealth>();
