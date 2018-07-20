@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e73c2dcf8405f043b81cc801e8eda9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 0.2
+  scrollSpeed: -0.1
   tileSizeY: 4.35
 --- !u!212 &212204797799371746
 SpriteRenderer:
