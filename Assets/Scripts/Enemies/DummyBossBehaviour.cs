@@ -12,11 +12,7 @@ public class DummyBossBehaviour : MonoBehaviour {
   bool moving;
   float startTime;
 
-  Rigidbody2D rb;
-
   void Start () {
-    rb = GetComponent<Rigidbody2D>();
-
     StartCoroutine(Behave());
   }
 
@@ -42,12 +38,15 @@ public class DummyBossBehaviour : MonoBehaviour {
   }
 
   IEnumerator Behave() {
+    /*
     // XXX: Temporary entrance! Refactor later
     rb.velocity = transform.up * 0.3f;
     yield return new WaitForSeconds(4f);
     rb.velocity = Vector2.zero;
     yield return new WaitForSeconds(1f);
     // ------------------------------
+    */
+    yield return new WaitForSeconds(5f);
 
     while (true) {
       Move(true);

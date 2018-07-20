@@ -1,26 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
 public class Level : MonoBehaviour {
   public Spawn[] spawns;
-  public GameObject boss;
+  public GameObject bossPrefab;
 
   GameController gameController;
 
   void Start () {
     gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
     gameController.RegisterLevel(this, spawns.Length);
-  }
-
-  public void SpawnBoss() {
-    StartCoroutine(SpawnBossCoroutine());
-  }
-
-  IEnumerator SpawnBossCoroutine() {
-    Debug.Log("Spawn Boss!!!");
-    yield return null;
   }
 
   public void StartLevel() {

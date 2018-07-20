@@ -6,6 +6,8 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
+  public Canvas canvas;
+
   public KeyMapper keyMapper;
 
   /* ----- GAME OVER ------ */
@@ -18,10 +20,19 @@ public class GameController : MonoBehaviour {
   bool levelPlaying;
   Level currentLevel;
   int levelEnemyCount;
-  List<GameObject> enemiesKilled;
+  List<Image> enemiesKilled;
+
+  public GameObject enemiesKilledImagesParent;
   /* -----   LEVEL   ------ */
 
+  /* ----- FLASH ----- */
+  public CanvasGroup flash;
+  bool flashActive;
+  /* ----- FLASH ----- */
+
   void Start () {
+    canvas.gameObject.SetActive(true);
+
     keyMapper = new KeyMapper();
 
     foreach (var text in gameOverTexts)
@@ -29,6 +40,10 @@ public class GameController : MonoBehaviour {
 
     gameOver = false;
     Time.timeScale = 1f;
+
+    enemiesKilled = new List<Image>();
+
+    flash.gameObject.SetActive(true);
   }
 
   void Update () {
@@ -40,6 +55,13 @@ public class GameController : MonoBehaviour {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
       }
     }
+
+    /* FlASH */
+    if (flashActive) {
+      flash.alpha = Mathf.MoveTowards(flash.alpha, 0, Time.deltaTime);
+      flashActive = flash.alpha > Mathf.Epsilon;
+    }
+    /* FlASH */
   }
 
   /* ----- GAME OVER ------ */
@@ -64,6 +86,9 @@ public class GameController : MonoBehaviour {
     currentLevel = level;
     levelEnemyCount = enemyCount;
 
+    if (levelEnemyCount == 0) {
+    }
+
     StartLevel();
   }
 
@@ -80,24 +105,45 @@ public class GameController : MonoBehaviour {
   public void AddEnemyDeath() {
     levelEnemyCount--;
 
-    if (levelEnemyCount == 0) {
-      currentLevel.SpawnBoss();
-    } else if (levelEnemyCount < 0) {
+    if (levelEnemyCount == 0 && currentLevel.bossPrefab != null) {
+      StartCoroutine(SpawnBoss());
+    } else if (levelEnemyCount < 0 || currentLevel.bossPrefab == null) {
       levelPlaying = false;
       ShowRanking();
     }
   }
 
   public void AddEnemyKill(GameObject enemy) {
-    /* 
-    enemy.GetComponents<MonoBehaviour>().ToList().ForEach(c => c.enabled = false);
-    enemy.GetComponent<SpriteRenderer>().enabled = true;
-
-    enemiesKilled.Add(enemy);
-*/
+    var obj = new GameObject();
+    Image enemyImage = obj.AddComponent<Image>();
+    enemyImage.sprite = enemy.GetComponent<SpriteRenderer>().sprite;
+    enemyImage.color = enemy.GetComponent<SpriteRenderer>().color;
+    obj.GetComponent<RectTransform>().SetParent(enemiesKilledImagesParent.transform);
+    obj.SetActive(false);
   }
 
   public void ShowRanking() {
   }
+
+  IEnumerator SpawnBoss() {
+    Flash();
+    var boss = Instantiate(currentLevel.bossPrefab, Vector3.zero, Quaternion.identity);
+
+    boss.GetComponents<MonoBehaviour>().ToList().ForEach(c => c.enabled = false);
+    boss.GetComponent<SpriteRenderer>().enabled = true;
+
+    // TODO: Stop player input
+
+    yield return new WaitForSeconds(3f);
+
+    boss.GetComponents<MonoBehaviour>().ToList().ForEach(c => c.enabled = true);
+  }
   /* -----   LEVEL   ------ */
+
+  /* -----   FLASH   ------ */
+  void Flash() {
+    flashActive = true;
+    flash.alpha = 1f;
+  }
+  /* -----   FLASH   ------ */
 }
