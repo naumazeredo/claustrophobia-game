@@ -13,6 +13,8 @@ public class PlayerHealth : MonoBehaviour {
 
   SpriteRenderer spriteRenderer;
   Transform hullTransform;
+  ParticleSystem hullEffect;
+
   GameController gameController;
 
   void Start () {
@@ -20,6 +22,7 @@ public class PlayerHealth : MonoBehaviour {
 
     spriteRenderer = GetComponent<SpriteRenderer>();
     hullTransform = GameObject.FindWithTag("Hull").transform;
+    hullEffect = hullTransform.GetChild(0).GetComponent<ParticleSystem>();
 
     gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
   }
@@ -39,6 +42,8 @@ public class PlayerHealth : MonoBehaviour {
     // TODO: Smooth transition?
     float newScale = hullTransform.localScale.x - 0.1f;
     hullTransform.localScale = new Vector3(newScale, newScale, 1);
+    var shape = hullEffect.shape;
+    shape.radius = newScale / 2f;
 
     // XXX: Move hull collider to child, change child scale and change hull sprite!
 
