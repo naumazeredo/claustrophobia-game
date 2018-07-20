@@ -15,13 +15,15 @@
 
 ## To do
 - X levels (+ new game plus, if we have time)
-- 8 directions (instead of free move)
 - Ranking system: show enemies killed, damage taken and the ranking (FEDCBASP)
-- Scripted levels
+- Invincible player after level end
 
 ## Ignored
 - XXX Deform hull (test spring) (use a single sprite for hull and shader to match)
 
+## Done
+- 8 directions (instead of free move)
+- Scripted levels
 
 # Roadmap
 

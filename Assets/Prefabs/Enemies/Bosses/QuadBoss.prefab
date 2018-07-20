@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cycleDuration: 5
-  attackInterval: 0.3
+  attackInterval: 0.2
   shooting: {fileID: 114743912801528568}
 --- !u!212 &212953347986811964
 SpriteRenderer:
@@ -429,7 +429,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1895862225
-  m_SortingLayer: -2
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 609d3b7806adf4ee7b80a4d673a7a32b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

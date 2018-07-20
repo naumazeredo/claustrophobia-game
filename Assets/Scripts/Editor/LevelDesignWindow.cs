@@ -15,7 +15,7 @@ public class LevelDesignWindow : EditorWindow {
   [SerializeField]
   bool onPlaymode;
 
-  [MenuItem("Window/Level Designer")]
+  [MenuItem("Claustrophobia/Level Designer")]
   static void Init() {
     var window = (LevelDesignWindow) EditorWindow.GetWindow(
       typeof(LevelDesignWindow),
@@ -59,6 +59,11 @@ public class LevelDesignWindow : EditorWindow {
 
     if (GUILayout.Button("Delete all spawners")) {
       DeleteSpawners();
+      GUIUtility.ExitGUI();
+    }
+
+    if (GUILayout.Button("Remove boss")) {
+      RemoveBoss();
       GUIUtility.ExitGUI();
     }
 
@@ -151,5 +156,9 @@ public class LevelDesignWindow : EditorWindow {
     var spawners = GameObject.FindGameObjectsWithTag("Spawn");
     foreach (var spawner in spawners)
       DestroyImmediate(spawner);
+  }
+
+  public void RemoveBoss() {
+    boss = null;
   }
 }
