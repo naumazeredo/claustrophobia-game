@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 47b3dc69df39fec4aabe5c48cde86210
+guid: 81cb764ebe47a5d468ceffe97630ce07
 TextureImporter:
   fileIDToRecycleName:
-    21300000: maincraft-left_0
-    21300002: maincraft-left_1
-    21300004: maincraft-left_2
-    21300006: maincraft-left_3
-    21300008: maincraft-left_4
+    21300000: maincraft_0
+    21300002: maincraft_1
+    21300004: maincraft_2
+    21300006: maincraft_3
+    21300008: maincraft_4
   externalObjects: {}
   serializedVersion: 6
   mipmaps:
@@ -89,7 +89,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: maincraft-left_0
+      name: maincraft_0
       rect:
         serializedVersion: 2
         x: 0
@@ -103,13 +103,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c137d9400906d54ab48af8d3b651793
+      spriteID: cc7a24e0542dadc4fad819968a6b5a50
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: maincraft-left_1
+      name: maincraft_1
       rect:
         serializedVersion: 2
         x: 32
@@ -123,13 +123,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbb20a95b9fa9234891fd3ae674ed541
+      spriteID: 32afc3056215ed343b7b44605e339281
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: maincraft-left_2
+      name: maincraft_2
       rect:
         serializedVersion: 2
         x: 64
@@ -143,13 +143,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ac9c006c5ffa4543ab9a5b5fea462ca
+      spriteID: d739d30a120f05445a508d175cda41cc
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: maincraft-left_3
+      name: maincraft_3
       rect:
         serializedVersion: 2
         x: 96
@@ -163,13 +163,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f4693f215e514e14690ebb8a54d7906a
+      spriteID: 908e2a83fab3ff04e9037ca7423fcd17
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: maincraft-left_4
+      name: maincraft_4
       rect:
         serializedVersion: 2
         x: 128
@@ -183,7 +183,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3715de8b1de8d05409228649fbad3069
+      spriteID: 66a58e9ba21783848b707fc763612b52
       vertices: []
       indices: 
       edges: []
@@ -191,7 +191,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 95d9de9e11c13b743948a52960f933da
+    spriteID: 5a9bb48ad45a87e4abdadee2ad60d7cb
     vertices: []
     indices: 
     edges: []
