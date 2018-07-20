@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour {
   }
 
   void Update () {
+    if (GetComponent<PlayerMode>().mode == PlayerMode.Mode.dashing) return;
+
     KeyMapper keyMapper = gameController.keyMapper;
 
     inputX = Input.GetAxis(keyMapper.getHorizontalMov());
@@ -44,7 +46,7 @@ public class PlayerMovement : MonoBehaviour {
     animator.SetFloat("InputX", inputX);
   }
 
-  public void FixedUpdate() {
+  void LateUpdate() {
     var rad = hullCollider.radius*hull.transform.localScale.x - GetComponent<CircleCollider2D>().radius;
     var center = (Vector2)hull.transform.position;
 
