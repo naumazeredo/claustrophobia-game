@@ -110,6 +110,8 @@ public class LevelDesignWindow : EditorWindow {
     levelComponent.spawns = GenerateSpawns();
     levelComponent.bossPrefab = boss;
 
+    Debug.Log("Create level count: " + levelComponent.spawns.Length);
+
     return level;
   }
 

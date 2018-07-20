@@ -24,7 +24,6 @@ public class GameController : MonoBehaviour {
 
   public Image ranking;
   public int rankingEnemyAreaWidth = 350;
-  public int rankingEnemyAreaStart = 50;
   public float rankingEnterWait = 1.5f;
   public float rankingExitWait = 1.5f;
   public float rankingEnemyInterval = 0.1f;
@@ -91,6 +90,8 @@ public class GameController : MonoBehaviour {
     currentLevel = level;
     levelEnemyCount = level.spawns.Length;
 
+    Debug.Log("RegisterLevel count: " + levelEnemyCount);
+
     if (levelEnemyCount == 0 && currentLevel.bossPrefab == null) {
       Debug.LogWarning("Empty level! No enemies and no boss!");
       return;
@@ -142,8 +143,10 @@ public class GameController : MonoBehaviour {
       enemySpriteRenderer.sprite.rect.height
     );
     rectTransform.localScale = new Vector3(1f, 1f, 1f);
+    /*
     rectTransform.anchorMin = new Vector2(0f, 0.5f);
     rectTransform.anchorMax = new Vector2(0f, 0.5f);
+    */
 
     enemiesKilled.Add(image);
   }
@@ -169,8 +172,13 @@ public class GameController : MonoBehaviour {
 
     yield return new WaitForSeconds(rankingEnterWait);
 
-    float stride = Mathf.Min(8f, (float) rankingEnemyAreaWidth / enemiesKilled.Count);
-    float posx = rankingEnemyAreaStart;
+    float stride = Mathf.Min(
+      8f,
+      (float) rankingEnemyAreaWidth / Mathf.Max(1, enemiesKilled.Count-1)
+    );
+
+    float width = stride * (enemiesKilled.Count - 1);
+    float posx = - width/2;
 
     foreach (var enemy in enemiesKilled) {
       enemy.gameObject.SetActive(true);

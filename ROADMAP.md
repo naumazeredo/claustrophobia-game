@@ -17,6 +17,7 @@
 - X levels (+ new game plus, if we have time)
 - Ranking system: show enemies killed, damage taken and the ranking (FEDCBASP)
 - Invincible player after level end
+- Boss health bar
 
 ## Ignored
 - XXX Deform hull (test spring) (use a single sprite for hull and shader to match)
