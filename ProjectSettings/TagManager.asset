@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Bounds
   - Spawn
+  - UsableHolder
   layers:
   - Default
   - TransparentFX
