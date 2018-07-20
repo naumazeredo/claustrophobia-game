@@ -16,6 +16,7 @@
 ## To do
 - X levels (+ new game plus, if we have time)
 - Ranking system: show enemies killed, damage taken and the ranking (FEDCBASP)
+- Load next level
 - Invincible player after level end
 - Boss health bar
 - Create polling system
