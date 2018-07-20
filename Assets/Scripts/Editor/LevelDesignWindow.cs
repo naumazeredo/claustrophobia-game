@@ -74,11 +74,15 @@ public class LevelDesignWindow : EditorWindow {
       return;
 
     if (EditorApplication.isPlaying && !onPlaymode) {
-      CreateLevel("Level Test");
+      if (FindObjectOfType<Level>()) {
+        Debug.LogWarning("Test Level was not created because these's a Level already active on Hierarchy");
+      } else {
+        CreateLevel("Level Test");
 
-      GameObject.FindGameObjectsWithTag("Spawn")
-        .ToList()
-        .ForEach(c => c.gameObject.SetActive(false));
+        GameObject.FindGameObjectsWithTag("Spawn")
+          .ToList()
+          .ForEach(c => c.gameObject.SetActive(false));
+      }
 
       onPlaymode = true;
     }
