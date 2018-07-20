@@ -2,8 +2,8 @@
 using UnityEngine;
 
 public class QuadBossBehaviour : MonoBehaviour {
-  public float cycleDuration = 10f;
-  public float attackInterval = 0.4f;
+  public float cycleDuration = 5f;
+  public float attackInterval = 0.2f;
 
   public Shooting shooting;
 
@@ -29,9 +29,10 @@ public class QuadBossBehaviour : MonoBehaviour {
     while (true) {
       Rotate();
 
-      for (float t = 0f; t < cycleDuration; t += attackInterval) {
+      int attacksPerCycle = (int)(cycleDuration / attackInterval);
+      for (int i = 0; i < attacksPerCycle; i++) {
         shooting.Fire();
-        yield return new WaitForSeconds(Mathf.Min(cycleDuration - t, attackInterval));
+        yield return new WaitForSeconds(attackInterval);
       }
 
       Invert();

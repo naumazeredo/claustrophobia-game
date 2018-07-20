@@ -42,7 +42,7 @@
   - [x] ZigZag enemy
   - [x] Spiked
   - [x] First boss
-  - [ ] Boss entrance (after all units are dead)
+  - [x] Boss entrance (after all units are dead)
 - [x] Player health (hull shrink)
   - [x] Enemy attack interaction (invul time)
 - [ ] Level design
@@ -88,3 +88,5 @@
 
 
 # BUGS
+
+- [ ] Game Over reset, resets Keymap
