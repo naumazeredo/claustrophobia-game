@@ -32,10 +32,10 @@ public class PlayerMovement : MonoBehaviour {
 
     KeyMapper keyMapper = gameController.keyMapper;
 
-    inputX = Input.GetAxis(keyMapper.getHorizontalMov());
+    inputX = Input.GetAxis(keyMapper.GetHorizontalMov());
     inputX = Mathf.Abs(inputX) < Mathf.Epsilon ? 0f : Mathf.Sign(inputX);
 
-    inputY = Input.GetAxis(keyMapper.getVerticalMov());
+    inputY = Input.GetAxis(keyMapper.GetVerticalMov());
     inputY = Mathf.Abs(inputY) < Mathf.Epsilon ? 0f : Mathf.Sign(inputY);
 
     input = new Vector2(inputX, inputY);

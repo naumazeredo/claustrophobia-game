@@ -1,25 +1,21 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class SphereLord : MonoBehaviour {
-	public float damageHate;
+public class HullDash : MonoBehaviour {
+	public float damageRate;
 
 	private GameObject player;
+	private PlayerMode playerMode;
 	private bool damageGiven;
 
 	// Use this for initialization
 	void Start () {
-    player = GameObject.FindWithTag("Player");
+		player = GameObject.FindWithTag("Player");
+    playerMode = player.GetComponent<PlayerMode>();
 	}
 	
-	// Update is called once per frame
-	void FixedUpdate () {
-		if (player.GetComponent<PlayerMode>().mode == PlayerMode.Mode.dashing)
-			transform.position = player.transform.position;
-	}
-
 	void OnTriggerStay2D(Collider2D col) {
-		if (player.GetComponent<PlayerMode>().mode != PlayerMode.Mode.dashing || damageGiven)
+		if (playerMode.mode != PlayerMode.Mode.dashing || damageGiven)
 			return;
 
 		UnitHealth health = col.GetComponent<UnitHealth>();
@@ -31,7 +27,7 @@ public class SphereLord : MonoBehaviour {
 	IEnumerator GiveDamage(UnitHealth unitHealth) {
 		damageGiven = true;
     unitHealth.TakeDamage();
-		yield return new WaitForSeconds(damageHate);
+		yield return new WaitForSeconds(damageRate);
 		damageGiven = false;
 	}
 }

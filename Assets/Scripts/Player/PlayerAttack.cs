@@ -21,10 +21,10 @@ public class PlayerAttack : MonoBehaviour {
   void Update () {
     if (!fired) {
       KeyMapper keyMapper = gameController.keyMapper;
-      inputX = Input.GetAxis(keyMapper.getHorizontalFire());
+      inputX = Input.GetAxis(keyMapper.GetHorizontalFire());
       inputX = Mathf.Abs(inputX) < Mathf.Epsilon ? 0f : Mathf.Sign(inputX);
 
-      inputY = Input.GetAxis(keyMapper.getVerticalFire());
+      inputY = Input.GetAxis(keyMapper.GetVerticalFire());
       inputY = Mathf.Abs(inputY) < Mathf.Epsilon ? 0f : Mathf.Sign(inputY);
 
       input = new Vector2(inputX, inputY);

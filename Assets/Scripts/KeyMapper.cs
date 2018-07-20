@@ -4,21 +4,21 @@
   private string verticalMov = "Vertical";
   private string verticalFire = "FireVertical";
 
-  public void invert() {
+  public void Invert() {
     Utils.Swap(ref horizontalFire, ref horizontalMov);
     Utils.Swap(ref verticalFire, ref verticalMov);
   }
 
-  public string getHorizontalMov() {
+  public string GetHorizontalMov() {
     return horizontalMov;
   }
-  public string getHorizontalFire() {
+  public string GetHorizontalFire() {
     return horizontalFire;
   }
-  public string getVerticalMov() {
+  public string GetVerticalMov() {
     return verticalMov;
   }
-  public string getVerticalFire() {
+  public string GetVerticalFire() {
     return verticalFire;
   }
 }

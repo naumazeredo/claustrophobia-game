@@ -34,6 +34,9 @@ public class GameController : MonoBehaviour {
   bool flashActive;
   /* ----- FLASH ----- */
 
+  private int enemiesKilledCount;
+  private UsableHolder usableHolder;
+
   void Start () {
     canvas.gameObject.SetActive(true);
 
@@ -48,11 +51,13 @@ public class GameController : MonoBehaviour {
     enemiesKilled = new List<Image>();
 
     flash.gameObject.SetActive(true);
+
+    usableHolder = GameObject.FindWithTag("UsableHolder").GetComponent<UsableHolder>();
   }
 
   void Update () {
     if (Input.GetKeyDown(KeyCode.I))
-      keyMapper.invert();
+      keyMapper.Invert();
 
     if (gameOver) {
       if (Input.GetKeyDown(KeyCode.R)) {
@@ -145,6 +150,9 @@ public class GameController : MonoBehaviour {
     rectTransform.localScale = new Vector3(1f, 1f, 1f);
 
     enemiesKilled.Add(image);
+
+    enemiesKilledCount++;
+    usableHolder.EnemyKillEvent();
   }
 
   IEnumerator SpawnBoss() {
@@ -200,4 +208,8 @@ public class GameController : MonoBehaviour {
     flash.alpha = 1f;
   }
   /* -----   FLASH   ------ */
+
+  public int GetEnemiesKilledCount() {
+    return enemiesKilledCount;
+  }
 }

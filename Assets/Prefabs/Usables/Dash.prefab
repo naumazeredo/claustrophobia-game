@@ -69,6 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usableType: 0
+  cooldown: 1
 --- !u!212 &212022420881115700
 SpriteRenderer:
   m_ObjectHideFlags: 1

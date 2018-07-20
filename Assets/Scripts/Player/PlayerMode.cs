@@ -19,7 +19,9 @@ public class PlayerMode : MonoBehaviour {
 
 	private Shooting shooting;
 	private Vector2 dashDir;
-	private Rigidbody2D rb;
+	private Rigidbody2D rb, hullRb;
+	private float hullMass;
+	private float hullDrag;
 
 
 	// Use this for initialization
@@ -27,25 +29,33 @@ public class PlayerMode : MonoBehaviour {
 		shooting = GetComponentInChildren<Shooting>();
 		dashDir = new Vector2(0, 1);
 		rb = GetComponent<Rigidbody2D>();
+		hullRb = GameObject.FindWithTag("Hull").GetComponent<Rigidbody2D>();
+		hullMass = hullRb.mass;
+		hullDrag = hullRb.drag;
 
-		change(mode);
+
+		Change(mode);
 	}
 
 	void Update() {
 		if (mode == Mode.dashing) {
-			if (rb.velocity.normalized.magnitude == 0.0f) {
+			if (rb.velocity.magnitude < 0.1f) {
 				rb.drag = 0.0f;
-				change(Mode.normal);
+				hullRb.mass = hullMass;
+				hullRb.drag = hullDrag;
+				hullRb.velocity = Vector2.zero;
+				Change(Mode.normal);
 			}
 		}
 	}
 
-	public void change(Mode newMode) {
+	public void Change(Mode newMode) {
 		switch (newMode) {
 			case Mode.dashing:
 				shooting.attack = null;
 				rb.velocity = dashDir * dashIntensity;
 				rb.drag = dashDrag;
+				//hullRb.mass = 5;
 				break;
 			case Mode.piercing:
 				shooting.attack = piercingBullet;

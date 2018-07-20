@@ -5,14 +5,15 @@ public class Usable : MonoBehaviour {
 	public enum UsableType { dash }
 
 	public UsableType usableType;
+	public int cooldown;
 	private bool onHold;
 
-	public void use() {
+	public void Use() {
 		GameObject player = GameObject.FindWithTag("Player");
 
 		switch (usableType) {
 			case UsableType.dash:
-				player.GetComponent<PlayerMode>().change(PlayerMode.Mode.dashing);
+				player.GetComponent<PlayerMode>().Change(PlayerMode.Mode.dashing);
 				break;
 		}
 	}
@@ -21,6 +22,6 @@ public class Usable : MonoBehaviour {
 		if (other.tag != "Player" || onHold) return;
 		onHold= true;
 
-		GameObject.FindWithTag("UsableHolder").GetComponent<UsableHolder>().change(gameObject);
+		GameObject.FindWithTag("UsableHolder").GetComponent<UsableHolder>().Change(gameObject);
 	}
 }

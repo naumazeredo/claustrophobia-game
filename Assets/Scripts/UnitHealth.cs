@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Experimental.UIElements;
 
 public class UnitHealth : MonoBehaviour {
   public int health = 1;
@@ -19,6 +20,11 @@ public class UnitHealth : MonoBehaviour {
       }
 
       //gameObject.SetActive(false);
+
+      var drop = GetComponent<Drop>();
+      if (drop != null)
+        drop.DropItem(transform.position);
+
       Destroy(gameObject);
     }
   }
