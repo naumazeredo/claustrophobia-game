@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEditor;
 
 public class Level : MonoBehaviour {
-  public List<Spawn> spawns;
+  public Spawn[] spawns;
   public GameObject boss;
 
   GameController gameController;
 
   void Start () {
     gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
-    gameController.RegisterLevel(this, spawns.Count);
+    gameController.RegisterLevel(this, spawns.Length);
   }
 
   public void SpawnBoss() {
