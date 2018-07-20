@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 58746879243398042}
   - component: {fileID: 114909309496329262}
   - component: {fileID: 95955675303371706}
+  - component: {fileID: 114002078741084168}
   m_Layer: 0
   m_Name: Hull
   m_TagString: Hull
@@ -97,6 +98,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114002078741084168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111368446748676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 617fb872e60be4c7898d0864889c6801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageHate: 0
 --- !u!114 &114909309496329262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -144,7 +157,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1895862225
-  m_SortingLayer: -2
+  m_SortingLayer: -3
   m_SortingOrder: 10
   m_Sprite: {fileID: 0}
   m_Color: {r: 0.7607844, g: 0.7607844, b: 0.7607844, a: 1}

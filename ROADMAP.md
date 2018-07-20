@@ -18,6 +18,7 @@
 - Ranking system: show enemies killed, damage taken and the ranking (FEDCBASP)
 - Invincible player after level end
 - Boss health bar
+- Create polling system
 
 ## Ignored
 - XXX Deform hull (test spring) (use a single sprite for hull and shader to match)
@@ -64,15 +65,19 @@
   - [ ] General graphics feel
   - [ ] Player
     - [ ] Turret
-    - [ ] Ship
+    - [x] Ship
   - [ ] Hull
-  - [ ] Enemy
-    - [ ] Basic enemy
-    - [ ] Basic enemy attack
+  - [ ] Enemies
+    - [ ] Dummy
+    - [ ] Spiked
+    - [ ] Mailgun
+  - [ ] Boss
+    - [ ] Quad
   - [ ] Player attack
-  - [ ] Explosion
+  - [ ] Explosions
+    - [ ] Attack explosion
+- [ ] Music
 - [ ] SFX
-  - [ ] Music
   - [ ] Player attack
   - [ ] Enemy attack
   - [ ] Player damage
@@ -93,3 +98,4 @@
 # BUGS
 
 - [ ] Game Over reset, resets Keymap
+- [ ] Ranking sometimes show before level ends

@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour {
     animator.SetFloat("InputX", inputX);
   }
 
-  public void FixedUpdate() {
+  void LateUpdate() {
     var rad = hullCollider.radius*hull.transform.localScale.x - GetComponent<CircleCollider2D>().radius;
     var center = (Vector2)hull.transform.position;
 

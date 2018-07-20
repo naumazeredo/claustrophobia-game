@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114754856124995364}
   - component: {fileID: 114098045024414954}
   - component: {fileID: 114172542377163072}
+  - component: {fileID: 114437867663806492}
   m_Layer: 8
   m_Name: PiercingBullet
   m_TagString: Untagged
@@ -127,6 +128,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushForce: 1000
+--- !u!114 &114437867663806492
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1292060677262280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59b64c31c697146619d6913dc7fabe5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countdown: 10
 --- !u!114 &114557810294933876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -183,7 +196,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1895862225
-  m_SortingLayer: -2
+  m_SortingLayer: -3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d65f375e7d6db422dbe835408eb67676, type: 3}
   m_Color: {r: 0.118924856, g: 1, b: 0, a: 1}

@@ -143,10 +143,6 @@ public class GameController : MonoBehaviour {
       enemySpriteRenderer.sprite.rect.height
     );
     rectTransform.localScale = new Vector3(1f, 1f, 1f);
-    /*
-    rectTransform.anchorMin = new Vector2(0f, 0.5f);
-    rectTransform.anchorMax = new Vector2(0f, 0.5f);
-    */
 
     enemiesKilled.Add(image);
   }
