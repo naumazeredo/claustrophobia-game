@@ -60,11 +60,14 @@
 - [ ] GFX
   - [ ] General graphics feel
   - [ ] Player
+    - [ ] Turret
+    - [ ] Ship
   - [ ] Hull
   - [ ] Enemy
     - [ ] Basic enemy
     - [ ] Basic enemy attack
   - [ ] Player attack
+  - [ ] Explosion
 - [ ] SFX
   - [ ] Music
   - [ ] Player attack
@@ -81,6 +84,7 @@
   - [ ] Boss low damage behaviour change
   - [ ] Boss levels (more attacks, more movements)
   - [ ] More power ups
+  - [ ] Parallax background
 
 
 # BUGS
