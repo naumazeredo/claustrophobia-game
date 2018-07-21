@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 114643544456480456}
   - component: {fileID: 114978534840909762}
   - component: {fileID: 114337037516759446}
+  - component: {fileID: 95308985980211790}
   m_Layer: 10
   m_Name: DummyBoss
   m_TagString: Enemy
@@ -255,6 +256,24 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: -0.02}
   m_Size: {x: 1.07, y: 0.73}
   m_Direction: 1
+--- !u!95 &95308985980211790
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1749572492186204}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114324734324726258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -345,9 +364,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1895862225
-  m_SortingLayer: -2
+  m_SortingLayer: -3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ec6afe48a114a4793951675a82f7d370, type: 3}
+  m_Sprite: {fileID: 21300008, guid: 8117fefcceacd924d87f1ec1255e73ac, type: 3}
   m_Color: {r: 0.745283, g: 0.71167153, b: 0.5484158, a: 1}
   m_FlipX: 0
   m_FlipY: 1

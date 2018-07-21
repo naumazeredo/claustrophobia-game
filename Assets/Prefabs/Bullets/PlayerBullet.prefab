@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114935270150934640}
   - component: {fileID: 114729361871110786}
   - component: {fileID: 114040615206083330}
+  - component: {fileID: 95980293983336300}
   m_Layer: 8
   m_Name: PlayerBullet
   m_TagString: Untagged
@@ -93,6 +94,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.01, y: 0.1}
   m_EdgeRadius: 0.01
+--- !u!95 &95980293983336300
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1276442344627400}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 25942c15cb548e645a34af947cc20984, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114040615206083330
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -198,8 +217,8 @@ SpriteRenderer:
   m_SortingLayerID: 1895862225
   m_SortingLayer: -3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: d65f375e7d6db422dbe835408eb67676, type: 3}
-  m_Color: {r: 0.118924856, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: bef505cc8504ecd459d44d5e1756bef6, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

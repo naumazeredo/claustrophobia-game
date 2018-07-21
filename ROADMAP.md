@@ -72,11 +72,17 @@
     - [ ] Dummy
     - [ ] Spiked
     - [ ] Mailgun
-  - [ ] Boss
-    - [ ] Quad
+  - [x] Boss
+    - [x] Quad
   - [ ] Player attack
   - [ ] Explosions
     - [ ] Attack explosion
+  - [ ] Bullets
+    - [ ] QuadBoss bullets
+    - [ ] Player bullets
+    - [ ] DummyEnemy bullets
+    - [ ] Spiked bullets
+    - [ ] Mailgun bullets
 - [ ] Music
 - [ ] SFX
   - [ ] Player attack
