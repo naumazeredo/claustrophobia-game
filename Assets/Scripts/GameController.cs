@@ -35,7 +35,7 @@ public class GameController : MonoBehaviour {
   /* ----- FLASH ----- */
 
   private int enemiesKilledCount;
-  private UsableHolder usableHolder;
+  private ItemHolder usableHolder;
 
   void Start () {
     canvas.gameObject.SetActive(true);
@@ -52,7 +52,7 @@ public class GameController : MonoBehaviour {
 
     flash.gameObject.SetActive(true);
 
-    usableHolder = GameObject.FindWithTag("UsableHolder").GetComponent<UsableHolder>();
+    usableHolder = GameObject.FindWithTag("UsableHolder").GetComponent<ItemHolder>();
   }
 
   void Update () {

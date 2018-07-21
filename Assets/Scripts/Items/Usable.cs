@@ -22,6 +22,6 @@ public class Usable : MonoBehaviour {
 		if (other.tag != "Player" || onHold) return;
 		onHold= true;
 
-		GameObject.FindWithTag("UsableHolder").GetComponent<UsableHolder>().Change(gameObject);
+		GameObject.FindWithTag("UsableHolder").GetComponent<ItemHolder>().Change(gameObject);
 	}
 }

@@ -47,6 +47,7 @@ public class PlayerMode : MonoBehaviour {
 	}
 
 	public void Change(Mode newMode) {
+		invencible = false;
 		switch (newMode) {
 			case Mode.dashing:
 				invencible = true;
