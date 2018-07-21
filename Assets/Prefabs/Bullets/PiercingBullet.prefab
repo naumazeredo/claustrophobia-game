@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 114098045024414954}
   - component: {fileID: 114172542377163072}
   - component: {fileID: 114437867663806492}
+  - component: {fileID: 95576466166235468}
   m_Layer: 8
   m_Name: PiercingBullet
   m_TagString: Untagged
@@ -93,6 +94,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.01, y: 0.1}
   m_EdgeRadius: 0.01
+--- !u!95 &95576466166235468
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1292060677262280}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0a978a18eb3e66443bbbcfc6769dbf11, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114098045024414954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -115,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56aaef09b1ae420db53655becdb1fc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 100
 --- !u!114 &114337783567186880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -198,8 +217,8 @@ SpriteRenderer:
   m_SortingLayerID: 1895862225
   m_SortingLayer: -3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: d65f375e7d6db422dbe835408eb67676, type: 3}
-  m_Color: {r: 0.118924856, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 1d5ac60f17f63764a97d1abe9b480984, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
