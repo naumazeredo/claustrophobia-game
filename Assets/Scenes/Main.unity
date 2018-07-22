@@ -506,6 +506,60 @@ Prefab:
       propertyPath: m_ApplyActiveColorSpace
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 199705963613339952, guid: be56be3ac6dd94ff7bdc65d443ed6fd8,
+        type: 2}
+      propertyPath: m_SortingLayerID
+      value: -1141683885
+      objectReference: {fileID: 0}
+    - target: {fileID: 199705963613339952, guid: be56be3ac6dd94ff7bdc65d443ed6fd8,
+        type: 2}
+      propertyPath: m_SortingLayer
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 198238559107988844, guid: be56be3ac6dd94ff7bdc65d443ed6fd8,
+        type: 2}
+      propertyPath: UVModule.frameOverTime.minMaxState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198238559107988844, guid: be56be3ac6dd94ff7bdc65d443ed6fd8,
+        type: 2}
+      propertyPath: UVModule.animationType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980144320130352, guid: be56be3ac6dd94ff7bdc65d443ed6fd8, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 199705963613339952, guid: be56be3ac6dd94ff7bdc65d443ed6fd8,
+        type: 2}
+      propertyPath: m_MaxParticleSize
+      value: 0.004
+      objectReference: {fileID: 0}
+    - target: {fileID: 198238559107988844, guid: be56be3ac6dd94ff7bdc65d443ed6fd8,
+        type: 2}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198238559107988844, guid: be56be3ac6dd94ff7bdc65d443ed6fd8,
+        type: 2}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 198238559107988844, guid: be56be3ac6dd94ff7bdc65d443ed6fd8,
+        type: 2}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 198238559107988844, guid: be56be3ac6dd94ff7bdc65d443ed6fd8,
+        type: 2}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 198238559107988844, guid: be56be3ac6dd94ff7bdc65d443ed6fd8,
+        type: 2}
+      propertyPath: ShapeModule.donutRadius
+      value: 0.01
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be56be3ac6dd94ff7bdc65d443ed6fd8, type: 2}
   m_IsPrefabAsset: 0
@@ -665,7 +719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.75686276}
+  m_Color: {r: 0, g: 0.112803824, b: 0.18867922, a: 0.75686276}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1973,7 +2027,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 15
+      scalar: 30
       minScalar: 10
       maxCurve:
         serializedVersion: 2
