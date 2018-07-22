@@ -3,6 +3,7 @@
 public class UnitHealth : MonoBehaviour {
   public int health = 1;
   public GameObject explosion;
+  public bool isBoss;
 
   GameController gameController;
 
@@ -19,11 +20,11 @@ public class UnitHealth : MonoBehaviour {
         gameController.AddEnemyKill(gameObject);
       }
 
-      //gameObject.SetActive(false);
-
       var drop = GetComponent<Drop>();
       if (drop != null)
         drop.DropItem(transform.position);
+
+      //gameObject.SetActive(false);
 
       Destroy(gameObject);
 

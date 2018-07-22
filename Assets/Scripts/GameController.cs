@@ -197,6 +197,17 @@ public class GameController : MonoBehaviour {
     enemiesKilled.Add(image);
 
     // ------
+    /*
+    if (enemy.GetComponent<UnitHealth>().isBoss) {
+      var ragdoll = new GameObject("BossRagdoll");
+      ragdoll.transform = enemy.transform;
+
+      var spriteRenderer = ragdoll.AddComponent<SpriteRenderer>();
+      spriteRenderer.sprite = enemySpriteRenderer.sprite;
+    }
+    */
+
+    // ------
     usableHolder.EnemyKillEvent();
   }
 
