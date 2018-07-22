@@ -36,6 +36,10 @@ public class GameController : MonoBehaviour {
   List<Image> enemiesKilled;
   /* -----   LEVEL   ------ */
 
+  /* ----- HULL SHINE ----- */
+  public Animator hullAnimator;
+  /* ----- HULL SHINE ----- */
+
   /* ----- FLASH ----- */
   public CanvasGroup flash;
   bool flashActive;
@@ -136,6 +140,8 @@ public class GameController : MonoBehaviour {
       Debug.LogWarning("Empty level! No enemies and no boss!");
       return;
     }
+
+    hullAnimator.SetBool("Shine", true);
 
     if (levelEnemyCount == 0) {
       StartCoroutine(SpawnBoss());

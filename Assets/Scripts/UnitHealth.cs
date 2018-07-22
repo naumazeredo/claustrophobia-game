@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.Experimental.UIElements;
 
 public class UnitHealth : MonoBehaviour {
   public int health = 1;
+  public GameObject explosion;
 
   GameController gameController;
 
@@ -26,6 +26,9 @@ public class UnitHealth : MonoBehaviour {
         drop.DropItem(transform.position);
 
       Destroy(gameObject);
+
+      if (explosion)
+        Instantiate(explosion, transform.position, Quaternion.identity);
     }
   }
 }
