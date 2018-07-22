@@ -17,7 +17,12 @@ public class GameController : MonoBehaviour {
   /* ----- GAME OVER ------ */
 
   /* -----   LEVEL   ------ */
+  public bool playOnAwake;
+  public Level[] levels;
+
   bool levelPlaying;
+
+  int currentLevelIndex;
   Level currentLevel;
   int levelEnemyCount;
 
@@ -54,6 +59,10 @@ public class GameController : MonoBehaviour {
     flash.gameObject.SetActive(true);
 
     usableHolder = GameObject.FindWithTag("UsableHolder").GetComponent<ItemHolder>();
+
+    // Level
+    if (playOnAwake)
+      NextLevel();
   }
 
   void Update () {
@@ -92,11 +101,30 @@ public class GameController : MonoBehaviour {
   /* ----- GAME OVER ------ */
 
   /* -----   LEVEL   ------ */
+
+  public void NextLevel() {
+    if (levelPlaying) {
+      Debug.LogWarning("Level still playing! NextLevel must be called when no level is playing");
+      return;
+    }
+
+    if (currentLevel)
+      Destroy(currentLevel);
+
+    if (currentLevelIndex >= levels.Length) {
+      // SHOW END GAME
+      Debug.Log("Credits rolling");
+      return;
+    }
+
+    currentLevel = levels[currentLevelIndex++];
+    currentLevel.gameObject.SetActive(true);
+    RegisterLevel(currentLevel);
+  }
+
   public void RegisterLevel(Level level) {
     currentLevel = level;
     levelEnemyCount = level.spawns.Length;
-
-    Debug.Log("RegisterLevel count: " + levelEnemyCount);
 
     if (levelEnemyCount == 0 && currentLevel.bossPrefab == null) {
       Debug.LogWarning("Empty level! No enemies and no boss!");
@@ -209,7 +237,9 @@ public class GameController : MonoBehaviour {
     foreach (var enemy in enemiesKilled)
       Destroy(enemy);
 
-    yield return null;
+    levelPlaying = false;
+
+    NextLevel();
   }
 
   string GetRankingLetter() {
@@ -217,16 +247,16 @@ public class GameController : MonoBehaviour {
     int enemiesCount = enemiesKilled.Count - (hasBoss ? 1 : 0);
 
     if (enemiesCount == 0) return "P";
+    if (enemiesCount == currentLevel.spawns.Length) return "S";
 
     float ratio = (float) enemiesCount / currentLevel.spawns.Length;
-    const float interval = 1f / 7f;
+    const float interval = 1f / 6f;
     if (                       ratio <   interval) return "F";
     if (ratio >=   interval && ratio < 2*interval) return "E";
     if (ratio >= 2*interval && ratio < 3*interval) return "D";
     if (ratio >= 3*interval && ratio < 4*interval) return "C";
     if (ratio >= 4*interval && ratio < 5*interval) return "B";
-    if (ratio >= 5*interval && ratio < 6*interval) return "A";
-    return "S";
+    return "A";
   }
   /* -----   LEVEL   ------ */
 

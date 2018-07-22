@@ -11,7 +11,7 @@ public static class SpawnersControl {
   }
 
   private static void DisableSpawners(PlayModeStateChange state) {
-    if (state == PlayModeStateChange.ExitingEditMode) {
+    if (state == PlayModeStateChange.EnteredPlayMode) {
       spawners =
         GameObject
         .FindGameObjectsWithTag("Spawn")

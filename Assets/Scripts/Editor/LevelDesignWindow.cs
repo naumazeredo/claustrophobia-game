@@ -95,11 +95,13 @@ public class LevelDesignWindow : EditorWindow {
           .Select(c => c.ToSpawn())
           .ToArray();
 
-        CreateLevel("Level Test", spawns);
+        var level = CreateLevel("Level Test", spawns);
 
-        GameObject.FindGameObjectsWithTag("Spawn")
-          .ToList()
-          .ForEach(c => c.gameObject.SetActive(false));
+        // XXX
+        GameObject
+          .FindWithTag("GameController")
+          .GetComponent<GameController>()
+          .RegisterLevel(level.GetComponent<Level>());
       }
 
       onPlaymode = true;
@@ -122,8 +124,6 @@ public class LevelDesignWindow : EditorWindow {
 
     levelComponent.spawns = spawns;
     levelComponent.bossPrefab = boss;
-
-    Debug.Log("Create level count: " + levelComponent.spawns.Length);
 
     return level;
   }

@@ -6,13 +6,6 @@ public class Level : MonoBehaviour {
   public Spawn[] spawns;
   public GameObject bossPrefab;
 
-  GameController gameController;
-
-  void Start () {
-    gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
-    gameController.RegisterLevel(this);
-  }
-
   public void StartLevel() {
     var children = new List<GameObject>();
     for (int i = 0; i < transform.childCount; i++)
