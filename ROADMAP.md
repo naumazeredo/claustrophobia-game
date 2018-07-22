@@ -106,3 +106,6 @@
 
 - [ ] Game Over reset, resets Keymap
 - [ ] Ranking sometimes show before level ends
+- [ ] EDITOR: Maximize On Play + Test Level on Play: pause and unpause (only
+    works when Level Designer window is visible :/)
+- [ ] EDITOR: Test Level On Play + 'R'eset after death does not work together

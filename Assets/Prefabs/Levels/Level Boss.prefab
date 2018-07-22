@@ -1,0 +1,202 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1814008229202044}
+  m_IsPrefabAsset: 1
+--- !u!1 &1814008229202044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4785266608963810}
+  - component: {fileID: 114798184193443812}
+  m_Layer: 0
+  m_Name: Level Boss
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4785266608963810
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1814008229202044}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114798184193443812
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1814008229202044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18a8053a6935c45f9b6cb3026015f231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawns:
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: -0.55256844, y: 48.844837, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: 0.009837151, y: 48.372417, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: 0.5272498, y: 47.899998, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1660260802953072, guid: 30ee6f20ea9014294af58a19ceac3271, type: 2}
+    position: {x: 0.015856981, y: 42.02, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: -1.0068722, y: 46.41997, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: -1.5182371, y: 45.860664, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: -2.0136194, y: 45.381252, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: 1.0416355, y: 44.48215, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: 1.4786634, y: 43.870316, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: 2.0030956, y: 43.404156, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: 0.54, y: 41.902203, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: 0.02696085, y: 41.41, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: -0.55, y: 40.920956, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: 2.4, y: 36.819164, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: 1.995758, y: 36.2151, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: 1.5035577, y: 35.722897, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: 1.03373, y: 35.230698, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: 0.49678326, y: 34.71612, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: -2.4, y: 36.778378, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: -1.9632566, y: 36.178917, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: -1.4494336, y: 35.72932, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: -0.9570179, y: 35.17268, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: -0.507422, y: 34.72308, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: 0, y: 34.200787, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1660260802953072, guid: 30ee6f20ea9014294af58a19ceac3271, type: 2}
+    position: {x: -1, y: 24.5, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1660260802953072, guid: 30ee6f20ea9014294af58a19ceac3271, type: 2}
+    position: {x: 1, y: 25.5, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1660260802953072, guid: 30ee6f20ea9014294af58a19ceac3271, type: 2}
+    position: {x: 0.5, y: 24, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1031172812075998, guid: acc8b481dc8ef42c98e8ee8e55a1f491, type: 2}
+    position: {x: 1.0331192, y: 13.987204, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1031172812075998, guid: acc8b481dc8ef42c98e8ee8e55a1f491, type: 2}
+    position: {x: -0.99850607, y: 14.008367, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1660260802953072, guid: 30ee6f20ea9014294af58a19ceac3271, type: 2}
+    position: {x: -0.00385499, y: 14.008367, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1031172812075998, guid: acc8b481dc8ef42c98e8ee8e55a1f491, type: 2}
+    position: {x: 1.01, y: 11.910001, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1031172812075998, guid: acc8b481dc8ef42c98e8ee8e55a1f491, type: 2}
+    position: {x: -0.98, y: 11.960001, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: 1.4775381, y: 12.950224, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: 0.48288846, y: 12.971387, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: -0.5329249, y: 12.97, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: -1.5064119, y: 12.93, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1660260802953072, guid: 30ee6f20ea9014294af58a19ceac3271, type: 2}
+    position: {x: -0.0038557053, y: 11.066738, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1031172812075998, guid: acc8b481dc8ef42c98e8ee8e55a1f491, type: 2}
+    position: {x: -2.014317, y: 11.024413, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1031172812075998, guid: acc8b481dc8ef42c98e8ee8e55a1f491, type: 2}
+    position: {x: 1.9854445, y: 11.00325, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: 2.0069108, y: 4.948681, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: -1.9672368, y: 4.930023, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: -0.00815022, y: 5.4711046, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: 0.45829904, y: 5.3031826, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: -0.49325728, y: 5.3031826, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: 0.99938047, y: 4.967339, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1598111171753922, guid: 0ca6d877221a64c17875cfd3beff01a7, type: 2}
+    position: {x: -1.0156797, y: 4.9113655, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1660260802953072, guid: 30ee6f20ea9014294af58a19ceac3271, type: 2}
+    position: {x: 1.5190737, y: 3.964942, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1660260802953072, guid: 30ee6f20ea9014294af58a19ceac3271, type: 2}
+    position: {x: -1.5021802, y: 3.997429, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  - prefab: {fileID: 1660260802953072, guid: 30ee6f20ea9014294af58a19ceac3271, type: 2}
+    position: {x: -0.5, y: 26, z: 0}
+    rotation: {x: 0, y: 0, z: 1, w: 0}
+  bossPrefab: {fileID: 1895600751349686, guid: 7210a648cb63f41a288207ca6cc7eff4, type: 2}

@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 1912976953350934, guid: fefc659c3231b4819ab98c83b6343a3e, type: 2}
-  dropRate: 30
+  dropRate: 5
 --- !u!114 &114896417574010564
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -4,6 +4,7 @@ using UnityEditor;
 
 [InitializeOnLoadAttribute]
 public static class SpawnersControl {
+  [SerializeField]
   public static Spawner[] spawners;
 
   static SpawnersControl() {
@@ -18,9 +19,11 @@ public static class SpawnersControl {
         .Select(c => c.GetComponent<Spawner>())
         .ToArray();
 
+      /*
       spawners
         .ToList()
         .ForEach(c => c.gameObject.SetActive(false));
+        */
     }
   }
 }

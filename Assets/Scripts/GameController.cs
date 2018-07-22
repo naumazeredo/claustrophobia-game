@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour {
   /* ----- GAME OVER ------ */
 
   /* -----   LEVEL   ------ */
-  public bool playOnAwake;
+  public bool playLevels;
   public Level[] levels;
 
   bool levelPlaying;
@@ -61,8 +61,8 @@ public class GameController : MonoBehaviour {
     usableHolder = GameObject.FindWithTag("UsableHolder").GetComponent<ItemHolder>();
 
     // Level
-    if (playOnAwake)
-      NextLevel();
+    //Debug.Log("Start ending");
+    NextLevel();
   }
 
   void Update () {
@@ -103,6 +103,10 @@ public class GameController : MonoBehaviour {
   /* -----   LEVEL   ------ */
 
   public void NextLevel() {
+    //Debug.Log("NextLevel");
+    if (!playLevels)
+      return;
+
     if (levelPlaying) {
       Debug.LogWarning("Level still playing! NextLevel must be called when no level is playing");
       return;
@@ -123,6 +127,8 @@ public class GameController : MonoBehaviour {
   }
 
   public void RegisterLevel(Level level) {
+    Debug.Log("Register: " + level);
+
     currentLevel = level;
     levelEnemyCount = level.spawns.Length;
 
@@ -235,10 +241,12 @@ public class GameController : MonoBehaviour {
     rankingLetter.gameObject.SetActive(false);
     ranking.gameObject.SetActive(false);
     foreach (var enemy in enemiesKilled)
-      Destroy(enemy);
+      Destroy(enemy.gameObject);
+    enemiesKilled.Clear();
 
     levelPlaying = false;
 
+    //Debug.Log("ShowRanking ending");
     NextLevel();
   }
 

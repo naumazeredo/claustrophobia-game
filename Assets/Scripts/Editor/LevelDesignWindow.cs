@@ -99,6 +99,11 @@ public class LevelDesignWindow : EditorWindow {
 
         // XXX
         GameObject
+          .FindGameObjectsWithTag("Spawn")
+          .ToList()
+          .ForEach(c => c.SetActive(false));
+
+        GameObject
           .FindWithTag("GameController")
           .GetComponent<GameController>()
           .RegisterLevel(level.GetComponent<Level>());
