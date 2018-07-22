@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 public class Level : MonoBehaviour {
   public Spawn[] spawns;
@@ -15,7 +14,7 @@ public class Level : MonoBehaviour {
       Destroy(child);
 
     foreach (var spawn in spawns) {
-      var spawner = PrefabUtility.InstantiatePrefab(spawn.prefab) as GameObject;
+      var spawner = Instantiate(spawn.prefab, spawn.position, spawn.rotation);
       spawner.transform.position = spawn.position;
       spawner.transform.rotation = spawn.rotation;
       spawner.transform.SetParent(transform);

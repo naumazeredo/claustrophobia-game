@@ -91,8 +91,7 @@ public class LevelDesignWindow : EditorWindow {
       } else {
         Spawn[] spawns =
           SpawnersControl.spawners
-          .ToList()
-          .Select(c => c.ToSpawn())
+          .Select(c => SpawnerToSpawn(c.gameObject))
           .ToArray();
 
         var level = CreateLevel("Level Test", spawns);
@@ -119,7 +118,7 @@ public class LevelDesignWindow : EditorWindow {
 
   Spawn[] GenerateSpawns() {
     return GameObject.FindGameObjectsWithTag("Spawn")
-      .Select(c => c.GetComponent<Spawner>().ToSpawn())
+      .Select(c => SpawnerToSpawn(c))
       .ToArray();
   }
 
@@ -180,5 +179,20 @@ public class LevelDesignWindow : EditorWindow {
 
   public void RemoveBoss() {
     boss = null;
+  }
+
+  Spawn SpawnerToSpawn(GameObject go) {
+    Spawn spawn = new Spawn();
+
+    Object obj = PrefabUtility.GetCorrespondingObjectFromSource(go);
+    spawn.prefab = (GameObject) AssetDatabase.LoadAssetAtPath(
+      AssetDatabase.GetAssetPath(obj),
+      typeof(GameObject)
+    );
+
+    spawn.position = go.transform.position;
+    spawn.rotation = go.transform.rotation;
+
+    return spawn;
   }
 }
