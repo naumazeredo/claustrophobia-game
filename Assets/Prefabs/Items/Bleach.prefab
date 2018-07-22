@@ -22,9 +22,9 @@ GameObject:
   - component: {fileID: 212280981643451740}
   - component: {fileID: 114371187819846346}
   - component: {fileID: 58339690381960096}
-  - component: {fileID: 95641350423519914}
   - component: {fileID: 114377182517749800}
   - component: {fileID: 50439126867295366}
+  - component: {fileID: 95342318539304380}
   m_Layer: 0
   m_Name: Bleach
   m_TagString: Untagged
@@ -80,7 +80,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.13
---- !u!95 &95641350423519914
+--- !u!95 &95342318539304380
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -89,7 +89,7 @@ Animator:
   m_GameObject: {fileID: 1211645230132006}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 284bef9787b6f7c49b265b62f9eb70d5, type: 2}
+  m_Controller: {fileID: 9100000, guid: ca9405f06f52cd140a6183f7cf00ac3c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -158,7 +158,7 @@ SpriteRenderer:
   m_SortingLayerID: 1895862225
   m_SortingLayer: -3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ae37e7f3acc8bed4bb6908d2125f7f29, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dbbe05f93aa9fa649a415d88ddfd8834, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
