@@ -133,6 +133,7 @@ public class GameController : MonoBehaviour {
 
   public void AddEnemyKill(GameObject enemy) {
     var obj = new GameObject("EnemyKill-" + enemy.name);
+    obj.AddComponent<ShrinkingFadeIn>();
     Image image = obj.AddComponent<Image>();
     RectTransform rectTransform = obj.GetComponent<RectTransform>();
 

@@ -15,6 +15,8 @@ public class LevelDesignWindow : EditorWindow {
   [SerializeField]
   bool onPlaymode;
 
+  Vector2 scroll;
+
   [MenuItem("Claustrophobia/Level Designer")]
   static void Init() {
     var window = (LevelDesignWindow) EditorWindow.GetWindow(
@@ -26,6 +28,8 @@ public class LevelDesignWindow : EditorWindow {
   }
 
   void OnGUI() {
+    scroll = EditorGUILayout.BeginScrollView(scroll);
+
     EditorGUILayout.HelpBox(
       "Position Spawn objects on the Scene.\n" +
       "After you complete the desired level, " +
@@ -72,9 +76,12 @@ public class LevelDesignWindow : EditorWindow {
     testOnPlay = EditorGUILayout.Toggle("Test Level on Play", testOnPlay);
 
     EditorGUI.EndDisabledGroup();
+
+    EditorGUILayout.EndScrollView();
   }
 
   void Update() {
+    // FIXME: Does not work if window is not showing! (--> Maximize On Play <--)
     if (!testOnPlay)
       return;
 
@@ -82,7 +89,13 @@ public class LevelDesignWindow : EditorWindow {
       if (FindObjectOfType<Level>()) {
         Debug.LogWarning("Test Level was not created because these's a Level already active on Hierarchy");
       } else {
-        CreateLevel("Level Test");
+        Spawn[] spawns =
+          SpawnersControl.spawners
+          .ToList()
+          .Select(c => c.ToSpawn())
+          .ToArray();
+
+        CreateLevel("Level Test", spawns);
 
         GameObject.FindGameObjectsWithTag("Spawn")
           .ToList()
@@ -103,11 +116,11 @@ public class LevelDesignWindow : EditorWindow {
       .ToArray();
   }
 
-  GameObject CreateLevel(string objName) {
+  GameObject CreateLevel(string objName, Spawn[] spawns) {
     var level = new GameObject(objName);
     var levelComponent = level.AddComponent<Level>();
 
-    levelComponent.spawns = GenerateSpawns();
+    levelComponent.spawns = spawns;
     levelComponent.bossPrefab = boss;
 
     Debug.Log("Create level count: " + levelComponent.spawns.Length);
@@ -125,7 +138,7 @@ public class LevelDesignWindow : EditorWindow {
       return;
     }
 
-    var level = CreateLevel(levelName);
+    var level = CreateLevel(levelName, GenerateSpawns());
 
     string path = "Assets/Prefabs/Levels/" + levelName + ".prefab";
 
