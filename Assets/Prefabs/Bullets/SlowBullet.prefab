@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114837548326163378}
   - component: {fileID: 114893112215351710}
   - component: {fileID: 114311090195258458}
+  - component: {fileID: 95630139506741630}
   m_Layer: 9
   m_Name: SlowBullet
   m_TagString: Untagged
@@ -41,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1319533012978894}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.607, y: -0.028, z: 0}
+  m_LocalPosition: {x: -0.25091958, y: 1.2446938, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -92,6 +93,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.01, y: 0.1}
   m_EdgeRadius: 0.01
+--- !u!95 &95630139506741630
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1319533012978894}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6ce93eda500c9aa45ae52e090ba28fc3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114311090195258458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,7 +204,7 @@ SpriteRenderer:
   m_SortingLayerID: 1895862225
   m_SortingLayer: -3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 21e206ae5184b4a49a15158901c4c1e8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d4d0fafd34a24f04a96d2132a51eafb9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
