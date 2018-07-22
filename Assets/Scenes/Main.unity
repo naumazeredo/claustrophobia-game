@@ -6254,12 +6254,17 @@ Prefab:
     - target: {fileID: 114904799761766906, guid: 159fb35e18d8e40559bdced5ea204137,
         type: 2}
       propertyPath: dashIntensity
-      value: 20
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 114904799761766906, guid: 159fb35e18d8e40559bdced5ea204137,
         type: 2}
       propertyPath: dashDrag
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114904799761766906, guid: 159fb35e18d8e40559bdced5ea204137,
+        type: 2}
+      propertyPath: mode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114109532341848306, guid: 159fb35e18d8e40559bdced5ea204137, type: 2}

@@ -135,6 +135,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1000
+  damageExplosion: {fileID: 1354894558957234, guid: bc781d87c49b14cefa1cb159f54a4737,
+    type: 2}
+  explosion: {fileID: 0}
+  isBoss: 0
 --- !u!114 &114337783567186880
 MonoBehaviour:
   m_ObjectHideFlags: 1

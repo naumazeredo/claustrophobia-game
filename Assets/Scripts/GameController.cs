@@ -73,10 +73,8 @@ public class GameController : MonoBehaviour {
     if (Input.GetKeyDown(KeyCode.I))
       keyMapper.Invert();
 
-    if (gameOver) {
-      if (Input.GetKeyDown(KeyCode.R)) {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-      }
+    if (Input.GetKeyDown(KeyCode.R)) {
+      SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     /* FlASH */

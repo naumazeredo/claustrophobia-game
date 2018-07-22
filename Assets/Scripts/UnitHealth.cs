@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class UnitHealth : MonoBehaviour {
   public int health = 1;
+  public GameObject damageExplosion;
   public GameObject explosion;
   public bool isBoss;
 
@@ -14,7 +15,11 @@ public class UnitHealth : MonoBehaviour {
   }
 
   public void TakeDamage() {
+    Debug.Log("Damage taken: " + name + " : " + health);
     health--;
+
+    if (damageExplosion)
+      Instantiate(damageExplosion, transform.position, Quaternion.identity);
 
     if (health <= 0) {
       if (CompareTag("Enemy")) {
