@@ -647,7 +647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a56f14e05904aa6b57d4c0260e5f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: {fileID: 1548167506781244, guid: 65e3355632b486145bcd0fc68cb6ff32, type: 2}
+  attack: {fileID: 1548167506781244, guid: c2f46ffe3e7b6464da89f7691f48846e, type: 2}
   shootLocations:
   - {fileID: 4968001731627028}
   - {fileID: 4666440465285450}
@@ -706,7 +706,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a56f14e05904aa6b57d4c0260e5f0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: {fileID: 1548167506781244, guid: 65e3355632b486145bcd0fc68cb6ff32, type: 2}
+  attack: {fileID: 1548167506781244, guid: c2f46ffe3e7b6464da89f7691f48846e, type: 2}
   shootLocations:
   - {fileID: 4336261427086492}
   - {fileID: 4925826088646996}
@@ -724,6 +724,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  damageExplosion: {fileID: 0}
   explosion: {fileID: 1066605927742872, guid: 177774b1781f146a4b9df309e2e7c8de, type: 2}
   isBoss: 0
 --- !u!212 &212507601493030558
