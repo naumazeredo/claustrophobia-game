@@ -99,7 +99,7 @@ public class LevelDesignWindow : EditorWindow {
 
   Spawn[] GenerateSpawns() {
     return GameObject.FindGameObjectsWithTag("Spawn")
-      .Select(n => n.GetComponent<Spawner>().ToSpawn())
+      .Select(c => c.GetComponent<Spawner>().ToSpawn())
       .ToArray();
   }
 

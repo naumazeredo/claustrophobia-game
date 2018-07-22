@@ -20,13 +20,15 @@ public class GameController : MonoBehaviour {
   bool levelPlaying;
   Level currentLevel;
   int levelEnemyCount;
-  List<Image> enemiesKilled;
 
   public Image ranking;
+  public Text rankingLetter;
   public int rankingEnemyAreaWidth = 350;
   public float rankingEnterWait = 1.5f;
   public float rankingExitWait = 1.5f;
   public float rankingEnemyInterval = 0.1f;
+  public float rankingLetterShowWait = 1f;
+  List<Image> enemiesKilled;
   /* -----   LEVEL   ------ */
 
   /* ----- FLASH ----- */
@@ -34,7 +36,6 @@ public class GameController : MonoBehaviour {
   bool flashActive;
   /* ----- FLASH ----- */
 
-  private int enemiesKilledCount;
   private ItemHolder usableHolder;
 
   void Start () {
@@ -149,9 +150,12 @@ public class GameController : MonoBehaviour {
     );
     rectTransform.localScale = new Vector3(1f, 1f, 1f);
 
+    rectTransform.anchorMin = new Vector2(0.5f, 0f);
+    rectTransform.anchorMax = new Vector2(0.5f, 0f);
+
     enemiesKilled.Add(image);
 
-    enemiesKilledCount++;
+    // ------
     usableHolder.EnemyKillEvent();
   }
 
@@ -186,19 +190,42 @@ public class GameController : MonoBehaviour {
 
     foreach (var enemy in enemiesKilled) {
       enemy.gameObject.SetActive(true);
-      enemy.GetComponent<RectTransform>().anchoredPosition = new Vector2(posx, 0);
+      enemy.GetComponent<RectTransform>().anchoredPosition = new Vector2(posx, 70f);
       posx += stride;
 
       yield return new WaitForSeconds(rankingEnemyInterval);
     }
 
+    yield return new WaitForSeconds(rankingLetterShowWait);
+
+    rankingLetter.text = GetRankingLetter();
+    rankingLetter.gameObject.SetActive(true);
+
     yield return new WaitForSeconds(rankingExitWait);
 
+    rankingLetter.gameObject.SetActive(false);
     ranking.gameObject.SetActive(false);
     foreach (var enemy in enemiesKilled)
       Destroy(enemy);
 
     yield return null;
+  }
+
+  string GetRankingLetter() {
+    bool hasBoss = currentLevel.bossPrefab != null;
+    int enemiesCount = enemiesKilled.Count - (hasBoss ? 1 : 0);
+
+    if (enemiesCount == 0) return "P";
+
+    float ratio = (float) enemiesCount / currentLevel.spawns.Length;
+    const float interval = 1f / 7f;
+    if (                       ratio <   interval) return "F";
+    if (ratio >=   interval && ratio < 2*interval) return "E";
+    if (ratio >= 2*interval && ratio < 3*interval) return "D";
+    if (ratio >= 3*interval && ratio < 4*interval) return "C";
+    if (ratio >= 4*interval && ratio < 5*interval) return "B";
+    if (ratio >= 5*interval && ratio < 6*interval) return "A";
+    return "S";
   }
   /* -----   LEVEL   ------ */
 
@@ -210,6 +237,6 @@ public class GameController : MonoBehaviour {
   /* -----   FLASH   ------ */
 
   public int GetEnemiesKilledCount() {
-    return enemiesKilledCount;
+    return enemiesKilled.Count;
   }
 }
