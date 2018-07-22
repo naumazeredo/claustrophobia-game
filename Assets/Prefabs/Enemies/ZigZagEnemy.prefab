@@ -138,6 +138,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  explosion: {fileID: 1066605927742872, guid: 177774b1781f146a4b9df309e2e7c8de, type: 2}
+  isBoss: 0
 --- !u!114 &114506204429812838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -222,7 +224,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1895862225
-  m_SortingLayer: -2
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 51a17965db7164b028c0559c7a202302, type: 3}
   m_Color: {r: 1, g: 0.88947237, b: 0.35686278, a: 1}
