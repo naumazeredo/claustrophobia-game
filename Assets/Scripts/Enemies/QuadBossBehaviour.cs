@@ -11,10 +11,22 @@ public class QuadBossBehaviour : MonoBehaviour {
 
   Rigidbody2D rb;
 
+  IEnumerator coroutine;
+  bool coroutinePlaying;
+
   void Start () {
     rb = GetComponent<Rigidbody2D>();
 
-    StartCoroutine(Behave());
+    coroutine = Behave();
+    StartCoroutine(coroutine);
+    coroutinePlaying = true;
+  }
+
+  void OnDisable() {
+    if (coroutinePlaying) {
+      StopCoroutine(coroutine);
+      coroutinePlaying = false;
+    }
   }
 
   void Rotate() {

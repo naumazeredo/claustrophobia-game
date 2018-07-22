@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Linq;
+using UnityEngine;
 
 public class UnitHealth : MonoBehaviour {
   public int health = 1;
@@ -16,20 +18,36 @@ public class UnitHealth : MonoBehaviour {
 
     if (health <= 0) {
       if (CompareTag("Enemy")) {
-        gameController.AddEnemyDeath();
-        gameController.AddEnemyKill(gameObject);
+        if (isBoss) {
+          StartCoroutine(DelayedDeath());
+        } else {
+          gameController.AddEnemyDeath();
+          gameController.AddEnemyKill(gameObject);
+        }
       }
 
       var drop = GetComponent<Drop>();
       if (drop != null)
         drop.DropItem(transform.position);
 
-      //gameObject.SetActive(false);
-
-      Destroy(gameObject);
+      if (!isBoss)
+        Destroy(gameObject);
 
       if (explosion)
         Instantiate(explosion, transform.position, Quaternion.identity);
     }
+  }
+
+  IEnumerator DelayedDeath() {
+    GetComponents<MonoBehaviour>()
+      .ToList()
+      .ForEach(c => c.enabled = false);
+    GetComponent<SpriteRenderer>().enabled = true;
+
+    yield return new WaitForSeconds(5f);
+
+    Destroy(gameObject);
+    gameController.AddEnemyDeath();
+    gameController.AddEnemyKill(gameObject);
   }
 }
