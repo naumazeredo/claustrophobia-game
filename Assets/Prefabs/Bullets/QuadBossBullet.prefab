@@ -30,7 +30,7 @@ GameObject:
   - component: {fileID: 95973097644390068}
   m_Layer: 9
   m_Name: QuadBossBullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,6 +147,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  damageExplosion: {fileID: 0}
+  explosion: {fileID: 0}
+  isBoss: 0
 --- !u!114 &114717278690941110
 MonoBehaviour:
   m_ObjectHideFlags: 1

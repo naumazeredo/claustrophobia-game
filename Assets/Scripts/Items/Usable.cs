@@ -2,7 +2,7 @@
 using UnityEngine;
 
 public class Usable : MonoBehaviour {
-	public enum UsableType { dash }
+	public enum UsableType { dash, bleach }
 
 	public UsableType usableType;
 	public int cooldown;
@@ -14,6 +14,9 @@ public class Usable : MonoBehaviour {
 		switch (usableType) {
 			case UsableType.dash:
 				player.GetComponent<PlayerMode>().Change(PlayerMode.Mode.dashing);
+				break;
+			case UsableType.bleach:
+				player.GetComponent<PlayerMode>().Change(PlayerMode.Mode.bleach);
 				break;
 		}
 	}

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityEditor;
+using UnityEngine;
 
 public class ItemHolder : MonoBehaviour {
 	private GameController gameController;
@@ -32,6 +33,10 @@ public class ItemHolder : MonoBehaviour {
 
 		item = newUsable;
 		newUsable.transform.position = transform.position;
+		newUsable.GetComponent<ForwardMover>().speed = 0;
+
+		var sprite = newUsable.GetComponent<SpriteRenderer>();
+		sprite.sortingLayerName = "UI";
 	}
 
 	public void EnemyKillEvent() {
@@ -39,6 +44,10 @@ public class ItemHolder : MonoBehaviour {
 			inCooldown = false;
 			hullAnimator.SetTrigger("Shine");
 		}
+	}
+
+	public void ResetCooldown() {
+		inCooldown = false;
 	}
 
 }

@@ -14,9 +14,10 @@ public class UnitHealth : MonoBehaviour {
     gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
   }
 
-  public void TakeDamage() {
+  public void TakeDamage(bool destroy = false) {
     Debug.Log("Damage taken: " + name + " : " + health);
     health--;
+    if (destroy) health = 0;
 
     if (damageExplosion)
       Instantiate(damageExplosion, transform.position, Quaternion.identity);

@@ -27,7 +27,6 @@ GameObject:
   - component: {fileID: 114447171395109574}
   - component: {fileID: 114904799761766906}
   - component: {fileID: 114432013042978766}
-  - component: {fileID: 114109532341848306}
   - component: {fileID: 95808210028653516}
   m_Layer: 11
   m_Name: Player
@@ -145,17 +144,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   hullPushForce: 4
---- !u!114 &114109532341848306
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1499213584275946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e151f95c37e7edb448f1cc0f9a43383d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114234267150560028
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -220,6 +208,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mode: 0
+  dashIntensity: 50
+  dashDrag: 20
   normalBullet: {fileID: 1276442344627400, guid: 6a6e018604961469fb3fa739279fba4e,
     type: 2}
   piercingBullet: {fileID: 1292060677262280, guid: aa994332b60e14c00b298b88eb03f306,

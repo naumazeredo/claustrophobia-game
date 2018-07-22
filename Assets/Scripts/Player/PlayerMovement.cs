@@ -68,4 +68,8 @@ public class PlayerMovement : MonoBehaviour {
       hull.GetComponent<Rigidbody2D>().AddForce(-hullPushForce * dist.normalized);
     }
   }
+
+  public Vector2 GetInput() {
+    return input;
+  }
 }

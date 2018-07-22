@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 public class PlayerMode : MonoBehaviour {
 
 	public enum Mode {
 		normal,
 		dashing,
-		piercing
+		piercing,
+		bleach
 	};
 
 	public Mode mode = Mode.normal;
@@ -20,6 +23,8 @@ public class PlayerMode : MonoBehaviour {
 	private Shooting shooting;
 	private Vector2 dashDir;
 	private Rigidbody2D rb, hullRb;
+	private GameObject player;
+	private PlayerMovement playerMoviment;
 
 	private bool invencible;
 
@@ -27,9 +32,11 @@ public class PlayerMode : MonoBehaviour {
 	// Use this for initialization
 	void Start() {
 		shooting = GetComponentInChildren<Shooting>();
-		dashDir = new Vector2(0, 1);
 		rb = GetComponent<Rigidbody2D>();
 		hullRb = GameObject.FindWithTag("Hull").GetComponent<Rigidbody2D>();
+
+		player = GameObject.FindWithTag("Player");
+		playerMoviment = player.GetComponent<PlayerMovement>();
 
 		Change(mode);
 	}
@@ -39,7 +46,6 @@ public class PlayerMode : MonoBehaviour {
 			if (rb.velocity.magnitude < 0.1f) {
 				rb.drag = 0.0f;
 				hullRb.velocity = Vector2.zero;
-
 				invencible = false;
 				Change(Mode.normal);
 			}
@@ -50,6 +56,9 @@ public class PlayerMode : MonoBehaviour {
 		invencible = false;
 		switch (newMode) {
 			case Mode.dashing:
+				dashDir = playerMoviment.GetInput();
+				if(dashDir.magnitude == 0) dashDir = Vector2.up;
+
 				invencible = true;
 				shooting.attack = null;
 				rb.velocity = dashDir * dashIntensity;
@@ -58,7 +67,6 @@ public class PlayerMode : MonoBehaviour {
 			case Mode.piercing:
 				shooting.attack = piercingBullet;
 				break;
-			case Mode.normal:
 			default:
 				shooting.attack = normalBullet;
 				break;

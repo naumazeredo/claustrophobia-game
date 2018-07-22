@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 114560333585739944}
   - component: {fileID: 114853070969616964}
   - component: {fileID: 114289386777528800}
+  - component: {fileID: 114953044631714004}
   - component: {fileID: 95503384571037032}
   m_Layer: 10
   m_Name: MailgunEnemy
@@ -677,8 +678,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  damageExplosion: {fileID: 0}
   explosion: {fileID: 1066605927742872, guid: 177774b1781f146a4b9df309e2e7c8de, type: 2}
   isBoss: 0
+--- !u!114 &114953044631714004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1174386498592140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d75b14f04b84b1d906fdb63f7e71a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 1211645230132006, guid: 601ca130854174ce58f128adeddd2232, type: 2}
+  dropRate: 5
 --- !u!212 &212266762535279506
 SpriteRenderer:
   m_ObjectHideFlags: 1

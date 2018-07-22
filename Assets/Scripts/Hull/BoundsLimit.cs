@@ -7,10 +7,12 @@ public class BoundsLimit : MonoBehaviour {
 
   SpriteRenderer spriteRenderer;
   Rigidbody2D rb;
+  private PlayerMode playerMode;
 
   void Start () {
     rb = GetComponent<Rigidbody2D>();
     spriteRenderer = GetComponent<SpriteRenderer>();
+    playerMode = GameObject.FindWithTag("Player").GetComponent<PlayerMode>();
   }
 
   void FixedUpdate() {
@@ -22,7 +24,7 @@ public class BoundsLimit : MonoBehaviour {
       0f
     );
 
-    if (transform.position != newPosition) {
+    if (transform.position != newPosition && playerMode.mode != PlayerMode.Mode.bleach) {
       Vector2 delta = newPosition - transform.position;
       rb.AddForce(delta * (initialForce + proportionalForce * delta.magnitude));
     }

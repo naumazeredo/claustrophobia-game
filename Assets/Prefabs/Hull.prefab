@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 50787995952703690}
   - component: {fileID: 58746879243398042}
   - component: {fileID: 114909309496329262}
+  - component: {fileID: 114287832746522094}
   - component: {fileID: 95955675303371706}
-  - component: {fileID: 114002078741084168}
   m_Layer: 0
   m_Name: Hull
   m_TagString: Hull
@@ -129,7 +129,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114002078741084168
+--- !u!114 &114287832746522094
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -140,7 +140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 617fb872e60be4c7898d0864889c6801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageHate: 0
+  damageRate: 0
+  hullBleachSpeed: 3
+  hullBleachMax: 20
 --- !u!114 &114909309496329262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -234,7 +236,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -287,7 +289,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.02
+      scalar: 0.1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -403,7 +405,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 0.05
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -783,7 +785,7 @@ ParticleSystem:
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
-    donutRadius: 0.02
+    donutRadius: 0.01
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 180}
     m_Scale: {x: 1, y: 1, z: 1}
@@ -928,7 +930,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 200
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1427,7 +1429,7 @@ ParticleSystem:
     mode: 0
     frameOverTime:
       serializedVersion: 2
-      minMaxState: 3
+      minMaxState: 1
       scalar: 0.9999
       minScalar: 0
       maxCurve:
@@ -4728,7 +4730,7 @@ ParticleSystemRenderer:
   m_RenderMode: 0
   m_SortMode: 0
   m_MinParticleSize: 0
-  m_MaxParticleSize: 0.002
+  m_MaxParticleSize: 0.004
   m_CameraVelocityScale: 0
   m_VelocityScale: 0
   m_LengthScale: 2
