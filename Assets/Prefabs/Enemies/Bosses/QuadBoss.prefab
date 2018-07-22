@@ -384,6 +384,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 50
+  explosion: {fileID: 1066605927742872, guid: 3ba47d9a657b740c898d21d8a2070275, type: 2}
+  isBoss: 1
 --- !u!114 &114743912801528568
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -161,6 +161,9 @@ public class GameController : MonoBehaviour {
   }
 
   public void AddEnemyDeath() {
+    if (gameOver)
+      return;
+
     levelEnemyCount--;
 
     if (levelEnemyCount == 0 && currentLevel.bossPrefab != null) {
@@ -195,17 +198,6 @@ public class GameController : MonoBehaviour {
     rectTransform.anchorMax = new Vector2(0.5f, 0f);
 
     enemiesKilled.Add(image);
-
-    // ------
-    /*
-    if (enemy.GetComponent<UnitHealth>().isBoss) {
-      var ragdoll = new GameObject("BossRagdoll");
-      ragdoll.transform = enemy.transform;
-
-      var spriteRenderer = ragdoll.AddComponent<SpriteRenderer>();
-      spriteRenderer.sprite = enemySpriteRenderer.sprite;
-    }
-    */
 
     // ------
     usableHolder.EnemyKillEvent();
