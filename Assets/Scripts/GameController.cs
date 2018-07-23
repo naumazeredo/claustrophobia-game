@@ -55,6 +55,7 @@ public class GameController : MonoBehaviour {
 
   /* ----- CREDITS ----- */
   public GameObject credits;
+  public GameObject joinhas;
   /* ----- CREDITS ----- */
 
   private ItemHolder ItemHolder;
@@ -302,6 +303,7 @@ public class GameController : MonoBehaviour {
   /* -----  CREDITS  ------ */
   void Credits() {
     credits.SetActive(true);
+    joinhas.SetActive(true);
   }
   /* -----  CREDITS  ------ */
 
