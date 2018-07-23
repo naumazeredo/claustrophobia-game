@@ -236,9 +236,9 @@ GameObject:
   - component: {fileID: 114504248326833404}
   - component: {fileID: 114056117080383978}
   - component: {fileID: 114982106008010854}
-  - component: {fileID: 114582586316897078}
   - component: {fileID: 114518631224971370}
   - component: {fileID: 95899491574982606}
+  - component: {fileID: 114218496239288252}
   m_Layer: 10
   m_Name: SpikedEnemy
   m_TagString: Enemy
@@ -636,6 +636,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efb63e6bf64ae433c8c0e73c08f3b4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114218496239288252
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1740037418983276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d75b14f04b84b1d906fdb63f7e71a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 1211645230132006, guid: 601ca130854174ce58f128adeddd2232, type: 2}
+  - {fileID: 1912976953350934, guid: fefc659c3231b4819ab98c83b6343a3e, type: 2}
+  - {fileID: 1906935335333904, guid: e247ccb02f8cb4900bf4139a36309b2d, type: 2}
+  dropRate: 4
 --- !u!114 &114381672316498010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -682,19 +698,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e151f95c37e7edb448f1cc0f9a43383d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114582586316897078
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1740037418983276}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52d75b14f04b84b1d906fdb63f7e71a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  item: {fileID: 1906935335333904, guid: e247ccb02f8cb4900bf4139a36309b2d, type: 2}
-  dropRate: 2
 --- !u!114 &114793867543261896
 MonoBehaviour:
   m_ObjectHideFlags: 1

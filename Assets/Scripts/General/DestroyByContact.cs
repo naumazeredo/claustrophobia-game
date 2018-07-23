@@ -2,11 +2,6 @@
 
 
 public class DestroyByContact : MonoBehaviour {
-
-  private AudioSource source;
-  void Start(){
-    source = GetComponent<AudioSource>();
-  }
   void OnTriggerEnter2D(Collider2D col)  {
     if (col.CompareTag("Hull")) return;
     if (col.CompareTag("Bounds")) return;
@@ -20,5 +15,10 @@ public class DestroyByContact : MonoBehaviour {
         Health.TakeDamage();
       }
     }
+  }
+
+  void OnTriggerStay2D(Collider2D col)  {
+    if (col.CompareTag("Player"))
+      col.GetComponent<PlayerHealth>().TakeDamage();
   }
 }

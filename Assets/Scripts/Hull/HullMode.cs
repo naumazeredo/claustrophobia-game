@@ -30,9 +30,7 @@ public class HullMode : MonoBehaviour {
 				StartCoroutine(GiveDamage(health));
 			}
 		}
-	}
 
-  void OnTriggerEnter2D(Collider2D col) {
     if (playerMode.mode == PlayerMode.Mode.bleach && col.tag == "Bullet") {
       if (col.GetComponent<CreateInsideBleach>().justCreated)
         return;

@@ -42,9 +42,9 @@ GameObject:
   - component: {fileID: 114896417574010564}
   - component: {fileID: 114296913567695142}
   - component: {fileID: 114105292015538620}
-  - component: {fileID: 114857325496895910}
   - component: {fileID: 114656286789424716}
   - component: {fileID: 95847957453181812}
+  - component: {fileID: 114661379348588060}
   m_Layer: 10
   m_Name: DummyEnemy
   m_TagString: Enemy
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e151f95c37e7edb448f1cc0f9a43383d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114857325496895910
+--- !u!114 &114661379348588060
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,8 +180,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d75b14f04b84b1d906fdb63f7e71a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 1912976953350934, guid: fefc659c3231b4819ab98c83b6343a3e, type: 2}
-  dropRate: 5
+  items:
+  - {fileID: 1211645230132006, guid: 601ca130854174ce58f128adeddd2232, type: 2}
+  - {fileID: 1912976953350934, guid: fefc659c3231b4819ab98c83b6343a3e, type: 2}
+  - {fileID: 1906935335333904, guid: e247ccb02f8cb4900bf4139a36309b2d, type: 2}
+  dropRate: 4
 --- !u!114 &114896417574010564
 MonoBehaviour:
   m_ObjectHideFlags: 1
