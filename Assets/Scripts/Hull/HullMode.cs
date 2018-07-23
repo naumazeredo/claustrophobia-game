@@ -34,37 +34,23 @@ public class HullMode : MonoBehaviour {
 	}
 
   void OnTriggerEnter2D(Collider2D col) {
-    if (playerMode.mode == PlayerMode.Mode.bleach && col.tag == "Bullet") {
+    if (increasingHull && col.tag == "Bullet") {
       if (col.GetComponent<CreateInsideBleach>().justCreated)
         return;
       col.GetComponent<UnitHealth>().TakeDamage(true);
     }
   }
 
-	void FixedUpdate() {
-		if (playerMode.mode == PlayerMode.Mode.bleach) {
-			if (!increasingHull) {
-				increasingHull = true;
-        baseHullSize = transform.localScale;
-			}
-			if (transform.localScale.magnitude >= hullBleachMax * baseHullSize.magnitude) {
-				playerMode.Change(PlayerMode.Mode.normal);
-				increasingHull = false;
-				transform.position = player.transform.position;
-				transform.localScale = baseHullSize;
-				itemHolder.EndUse();
-			}
-			else {
-				transform.localScale = transform.localScale * (1 + hullBleachSpeed * 0.01f);
-				shape.radius = transform.localScale.x / 2f;
-			}
-		}
-	}
-
 	IEnumerator GiveDamage(UnitHealth unitHealth) {
 		damageGiven = true;
     unitHealth.TakeDamage();
 		yield return new WaitForSeconds(damageRate);
 		damageGiven = false;
+	}
+
+	public void ExpansionEnd() {
+    transform.position = player.transform.position;
+    increasingHull = false;
+    itemHolder.EndUse();
 	}
 }
