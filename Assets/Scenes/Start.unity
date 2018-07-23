@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 348919498}
   - component: {fileID: 348919500}
   m_Layer: 5
-  m_Name: Press Space Text
+  m_Name: Press Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,7 +181,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: press 'space' to start
+  m_Text: press 'enter' to start
 --- !u!222 &348919499
 CanvasRenderer:
   m_ObjectHideFlags: 0

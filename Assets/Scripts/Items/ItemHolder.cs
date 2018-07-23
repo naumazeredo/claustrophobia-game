@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngineInternal;
 
 public class ItemHolder : MonoBehaviour {
 	private GameController gameController;
@@ -50,21 +51,28 @@ public class ItemHolder : MonoBehaviour {
 
 		item.transform.position = transform.position;
 		item.GetComponent<ForwardMover>().speed = 0;
-		ResetCooldown();
+		ResetCooldown(false);
 
 		var sprite = item.GetComponent<SpriteRenderer>();
 		sprite.sortingLayerName = "UI";
 	}
 
 	public void EnemyKillEvent() {
-		if (inCooldown && gameController.GetEnemiesKilledCount() >= cooldown) {
-			inCooldown = false;
-			hullAnimator.SetTrigger("Shine");
+		if (inUse) {
+			cooldown++;
+			return;
 		}
+
+		ResetCooldown();
 	}
 
-	public void ResetCooldown() {
+	public void ResetCooldown(bool waitCooldown = true) {
+		if (!inCooldown) return;
+		if (waitCooldown && gameController.GetEnemiesKilledCount() < cooldown)
+			return;
+
 		inCooldown = false;
+		hullAnimator.SetTrigger("Shine");
 	}
 
 	public void StartUse() {
@@ -72,6 +80,7 @@ public class ItemHolder : MonoBehaviour {
 	}
 
 	public void EndUse() {
+		ResetCooldown();
 		inUse = false;
 		ChangeAfterUse();
 	}
