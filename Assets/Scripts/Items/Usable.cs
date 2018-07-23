@@ -24,6 +24,7 @@ public class Usable : MonoBehaviour {
 				break;
 			case UsableType.bleach:
 				player.GetComponent<PlayerMode>().Change(PlayerMode.Mode.bleach);
+				//var colliders = GameObject.FindWithTag("Hull").GetComponent<Collider>().;
         hullAnimator.SetTrigger("Expand");
 				break;
 		}

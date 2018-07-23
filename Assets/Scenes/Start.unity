@@ -181,7 +181,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: press 'enter' to start
+  m_Text: press 'space' to start
 --- !u!222 &348919499
 CanvasRenderer:
   m_ObjectHideFlags: 0
