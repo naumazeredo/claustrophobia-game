@@ -8,9 +8,11 @@ public class Usable : MonoBehaviour {
 	public int cooldown;
 	private bool onHold;
 	private ItemHolder itemHolder;
+	private Animator hullAnimator;
 
 	void Start() {
 		itemHolder = GameObject.FindWithTag("ItemHolder").GetComponent<ItemHolder>();
+		hullAnimator = GameObject.FindWithTag("Hull").GetComponent<Animator>();
 	}
 
 	public void Use() {
@@ -22,6 +24,7 @@ public class Usable : MonoBehaviour {
 				break;
 			case UsableType.bleach:
 				player.GetComponent<PlayerMode>().Change(PlayerMode.Mode.bleach);
+        hullAnimator.SetTrigger("Expand");
 				break;
 		}
 

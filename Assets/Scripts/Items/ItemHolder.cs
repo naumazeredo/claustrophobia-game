@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngineInternal;
 
 public class ItemHolder : MonoBehaviour {
 	private GameController gameController;
@@ -65,6 +66,7 @@ public class ItemHolder : MonoBehaviour {
 
 	public void ResetCooldown() {
 		inCooldown = false;
+		hullAnimator.SetTrigger("Shine");
 	}
 
 	public void StartUse() {
