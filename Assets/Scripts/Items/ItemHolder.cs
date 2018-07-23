@@ -8,11 +8,13 @@ public class ItemHolder : MonoBehaviour {
 	private int cooldown;
 
 	private bool inUse;
+  private AudioSource source;
 	private bool inCooldown;
 
 	void Start() {
     gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
 		hullAnimator = GameObject.FindWithTag("Hull").GetComponent<Animator>();
+    source = GetComponent<AudioSource>();
 	}
 
 	private void Update() {
@@ -27,6 +29,7 @@ public class ItemHolder : MonoBehaviour {
 	}
 
 	public void Change(GameObject newItem) {
+    source.Play();
 		nextItem = newItem;
 		newItem.active = false;
 		ChangeAfterUse();

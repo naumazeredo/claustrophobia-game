@@ -16,11 +16,13 @@ public class PlayerHealth : MonoBehaviour {
   Transform hullTransform;
   ParticleSystem hullEffect;
   private PlayerMode playerMode;
+  private AudioSource hitSound;
 
   GameController gameController;
 
   void Start () {
     playerMode = GetComponent<PlayerMode>();
+    hitSound = GetComponent<AudioSource> ();
     currentHealth = totalHealth;
 
     spriteRenderer = GetComponent<SpriteRenderer>();
@@ -35,6 +37,7 @@ public class PlayerHealth : MonoBehaviour {
       return;
 
     currentHealth--;
+    hitSound.Play();
     if (currentHealth <= 0) {
       gameObject.SetActive(false);
       gameController.GameOver();
