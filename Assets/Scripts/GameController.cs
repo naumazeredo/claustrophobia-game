@@ -136,7 +136,7 @@ public class GameController : MonoBehaviour {
       return;
     }
 
-    GameObject.FindWithTag("ItemHolder").GetComponent<ItemHolder>().ResetCooldown();
+    GameObject.FindWithTag("ItemHolder").GetComponent<ItemHolder>().ResetCooldown(false);
 
     currentLevel = levels[currentLevelIndex++];
     currentLevel.gameObject.SetActive(true);
