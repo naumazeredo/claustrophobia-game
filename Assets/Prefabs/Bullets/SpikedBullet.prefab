@@ -28,6 +28,8 @@ GameObject:
   - component: {fileID: 114116667977788580}
   - component: {fileID: 114282101669227254}
   - component: {fileID: 95105219867710074}
+  - component: {fileID: 114899568595689746}
+  - component: {fileID: 114323011489826804}
   m_Layer: 9
   m_Name: SpikedBullet
   m_TagString: Bullet
@@ -161,6 +163,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   countdown: 10
+--- !u!114 &114323011489826804
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1548167506781244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c8ba7bf4cca4fc8aeb76b72bbb8683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  justCreated: 1
 --- !u!114 &114544109923539860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -172,6 +186,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e151f95c37e7edb448f1cc0f9a43383d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114899568595689746
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1548167506781244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c8ba7bf4cca4fc8aeb76b72bbb8683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  justCreated: 1
 --- !u!212 &212687527278820836
 SpriteRenderer:
   m_ObjectHideFlags: 1

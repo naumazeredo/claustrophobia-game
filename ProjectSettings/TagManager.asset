@@ -4,8 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - PlayerAttack
-  - EnemyAttack
   - Hull
   - Enemy
   - Bounds

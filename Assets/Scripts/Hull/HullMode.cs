@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using UnityEditor;
 using UnityEngine;
 
 public class HullMode : MonoBehaviour {
@@ -31,10 +30,16 @@ public class HullMode : MonoBehaviour {
 			if (health != null) {
 				StartCoroutine(GiveDamage(health));
 			}
-		} else if (playerMode.mode == PlayerMode.Mode.bleach && col.tag == "Bullet") {
-			col.GetComponent<UnitHealth>().TakeDamage(true);
 		}
 	}
+
+  void OnTriggerEnter2D(Collider2D col) {
+    if (playerMode.mode == PlayerMode.Mode.bleach && col.tag == "Bullet") {
+      if (col.GetComponent<CreateInsideBleach>().justCreated)
+        return;
+      col.GetComponent<UnitHealth>().TakeDamage(true);
+    }
+  }
 
 	void FixedUpdate() {
 		if (playerMode.mode == PlayerMode.Mode.bleach) {
