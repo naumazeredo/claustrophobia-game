@@ -53,6 +53,10 @@ public class GameController : MonoBehaviour {
   bool flashActive;
   /* ----- FLASH ----- */
 
+  /* ----- CREDITS ----- */
+  public GameObject credits;
+  /* ----- CREDITS ----- */
+
   private ItemHolder ItemHolder;
 
   void Start () {
@@ -127,8 +131,7 @@ public class GameController : MonoBehaviour {
       Destroy(currentLevel);
 
     if (currentLevelIndex >= levels.Length) {
-      // SHOW END GAME
-      Debug.Log("Credits rolling");
+      Credits();
       return;
     }
 
@@ -295,6 +298,12 @@ public class GameController : MonoBehaviour {
     return "A";
   }
   /* -----   LEVEL   ------ */
+
+  /* -----  CREDITS  ------ */
+  void Credits() {
+    credits.SetActive(true);
+  }
+  /* -----  CREDITS  ------ */
 
   /* -----   FLASH   ------ */
   void Flash() {

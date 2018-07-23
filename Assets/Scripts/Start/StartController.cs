@@ -7,7 +7,9 @@ public class StartController : MonoBehaviour {
   public string gameName;
   public Text nameText;
   public GameObject pressSpace;
+  public GameObject instructions;
   public float letterInterval = 0.15f;
+  public float waitInstructions = .5f;
   public float waitPressSpace = 1f;
 
   bool canPress;
@@ -25,6 +27,7 @@ public class StartController : MonoBehaviour {
   IEnumerator EntranceCoroutine() {
     canPress = false;
     pressSpace.SetActive(false);
+    instructions.SetActive(false);
 
     for (int i = 1; i <= gameName.Length; i++) {
       nameText.text =
@@ -35,6 +38,9 @@ public class StartController : MonoBehaviour {
 
       yield return new WaitForSeconds(letterInterval);
     }
+
+    yield return new WaitForSeconds(waitInstructions);
+    instructions.SetActive(true);
 
     yield return new WaitForSeconds(waitPressSpace);
     canPress = true;

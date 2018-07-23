@@ -184,7 +184,7 @@ MonoBehaviour:
   - {fileID: 1211645230132006, guid: 601ca130854174ce58f128adeddd2232, type: 2}
   - {fileID: 1912976953350934, guid: fefc659c3231b4819ab98c83b6343a3e, type: 2}
   - {fileID: 1906935335333904, guid: e247ccb02f8cb4900bf4139a36309b2d, type: 2}
-  dropRate: 4
+  dropRate: 5
 --- !u!114 &114896417574010564
 MonoBehaviour:
   m_ObjectHideFlags: 1
