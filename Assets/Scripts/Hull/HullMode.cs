@@ -7,17 +7,19 @@ public class HullMode : MonoBehaviour {
 	public float hullBleachSpeed = 1;
 	public float hullBleachMax = 20;
 
+	private ItemHolder itemHolder;
 	private GameObject player;
 	private PlayerMode playerMode;
 	private bool damageGiven;
 
 	private Vector3 baseHullSize;
 	private ParticleSystem.ShapeModule shape;
-	private bool increasingHull = false;
+	private bool increasingHull;
 
 
 	// Use this for initialization
 	void Start () {
+		itemHolder = GameObject.FindWithTag("ItemHolder").GetComponent<ItemHolder>();
 		player = GameObject.FindWithTag("Player");
     playerMode = player.GetComponent<PlayerMode>();
 		shape = transform.GetChild(0).GetComponent<ParticleSystem>().shape;
@@ -45,6 +47,7 @@ public class HullMode : MonoBehaviour {
 				increasingHull = false;
 				transform.position = player.transform.position;
 				transform.localScale = baseHullSize;
+				itemHolder.EndUse();
 			}
 			else {
 				transform.localScale = transform.localScale * (1 + hullBleachSpeed * 0.01f);

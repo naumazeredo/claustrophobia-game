@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -40,12 +41,20 @@ public class GameController : MonoBehaviour {
   public Animator hullAnimator;
   /* ----- HULL SHINE ----- */
 
+  /* ----- BOUNDRY ----- */
+  public float maxX = 3.4f;
+  public float minY = 2.7f;
+  public float maxY = -7.8f;
+
+  private GameObject player;
+  /* ----- BOUNDRY ----- */
+
   /* ----- FLASH ----- */
   public CanvasGroup flash;
   bool flashActive;
   /* ----- FLASH ----- */
 
-  private ItemHolder usableHolder;
+  private ItemHolder ItemHolder;
 
   void Start () {
     canvas.gameObject.SetActive(true);
@@ -62,7 +71,8 @@ public class GameController : MonoBehaviour {
 
     flash.gameObject.SetActive(true);
 
-    usableHolder = GameObject.FindWithTag("UsableHolder").GetComponent<ItemHolder>();
+    ItemHolder = GameObject.FindWithTag("ItemHolder").GetComponent<ItemHolder>();
+    player = GameObject.FindWithTag("Player");
 
     // Level
     //Debug.Log("Start ending");
@@ -123,7 +133,7 @@ public class GameController : MonoBehaviour {
       return;
     }
 
-    GameObject.FindWithTag("UsableHolder").GetComponent<ItemHolder>().ResetCooldown();
+    GameObject.FindWithTag("ItemHolder").GetComponent<ItemHolder>().ResetCooldown();
 
     currentLevel = levels[currentLevelIndex++];
     currentLevel.gameObject.SetActive(true);
@@ -149,6 +159,16 @@ public class GameController : MonoBehaviour {
       StartLevel();
     }
   }
+
+  /*-- Boundry --*/
+  void FixedUpdate() {
+    var playerPosition = player.transform.position;
+    playerPosition.x = Mathf.Clamp(playerPosition.x, -maxX, maxX);
+    playerPosition.y = Mathf.Clamp(playerPosition.y, minY, maxY);
+
+    player.transform.position = playerPosition;
+  }
+  /*-- Boundry --*/
 
   public void StartLevel() {
     if (levelPlaying) {
@@ -200,7 +220,7 @@ public class GameController : MonoBehaviour {
     enemiesKilled.Add(image);
 
     // ------
-    usableHolder.EnemyKillEvent();
+    ItemHolder.EnemyKillEvent();
   }
 
   IEnumerator SpawnBoss() {

@@ -10,8 +10,8 @@ TagManager:
   - Enemy
   - Bounds
   - Spawn
-  - UsableHolder
   - Bullet
+  - ItemHolder
   layers:
   - Default
   - TransparentFX
