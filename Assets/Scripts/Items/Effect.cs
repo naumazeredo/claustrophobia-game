@@ -13,7 +13,7 @@ public class Effect : MonoBehaviour {
 		if (other.tag != "Player" || onHold) return;
 		onHold= true;
 
-		GameObject.FindWithTag("UsableHolder").GetComponent<ItemHolder>().Change(gameObject);
+		GameObject.FindWithTag("ItemHolder").GetComponent<ItemHolder>().Change(gameObject);
 		ActivateEffect();
 	}
 

@@ -1,12 +1,14 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ItemHolder : MonoBehaviour {
 	private GameController gameController;
 	private GameObject item;
-	private int cooldown;
-	private bool inCooldown;
+	private GameObject nextItem;
 	private Animator hullAnimator;
+	private int cooldown;
+
+	private bool inUse;
+	private bool inCooldown;
 
 	void Start() {
     gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
@@ -24,18 +26,30 @@ public class ItemHolder : MonoBehaviour {
 		inCooldown = true;
 	}
 
-	public void Change(GameObject newUsable) {
+	public void Change(GameObject newItem) {
+		nextItem = newItem;
+		newItem.active = false;
+		ChangeAfterUse();
+	}
+
+	public void ChangeAfterUse() {
+		if (inUse || nextItem == null) return;
+
 		if (item != null) {
 			var effect = item.GetComponent<Effect>();
 			if (effect != null) effect.RemoveEffect();
 			Destroy(item);
 		}
 
-		item = newUsable;
-		newUsable.transform.position = transform.position;
-		newUsable.GetComponent<ForwardMover>().speed = 0;
+		item = nextItem;
+		item.active = true;
+		nextItem = null;
 
-		var sprite = newUsable.GetComponent<SpriteRenderer>();
+		item.transform.position = transform.position;
+		item.GetComponent<ForwardMover>().speed = 0;
+		ResetCooldown();
+
+		var sprite = item.GetComponent<SpriteRenderer>();
 		sprite.sortingLayerName = "UI";
 	}
 
@@ -48,6 +62,15 @@ public class ItemHolder : MonoBehaviour {
 
 	public void ResetCooldown() {
 		inCooldown = false;
+	}
+
+	public void StartUse() {
+		inUse = true;
+	}
+
+	public void EndUse() {
+		inUse = false;
+		ChangeAfterUse();
 	}
 
 }

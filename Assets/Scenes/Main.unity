@@ -159,6 +159,9 @@ MonoBehaviour:
   rankingEnemyInterval: 0.15
   rankingLetterShowWait: 1
   hullAnimator: {fileID: 968288242}
+  maxX: 3.4
+  minY: -7.8
+  maxY: 2.7
   flash: {fileID: 979928951}
 --- !u!4 &34060024
 Transform:
@@ -236,7 +239,7 @@ GameObject:
   - component: {fileID: 149795386}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -390,6 +393,34 @@ Prefab:
         type: 2}
       propertyPath: m_SortingOrder
       value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212412367200515968, guid: 5d844c81e12534399a25bd6a781766ec,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212412367200515968, guid: 5d844c81e12534399a25bd6a781766ec,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212412367200515968, guid: 5d844c81e12534399a25bd6a781766ec,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118781063988386, guid: 5d844c81e12534399a25bd6a781766ec, type: 2}
+      propertyPath: m_Name
+      value: ItemHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 1118781063988386, guid: 5d844c81e12534399a25bd6a781766ec, type: 2}
+      propertyPath: m_TagString
+      value: ItemHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 212412367200515968, guid: 5d844c81e12534399a25bd6a781766ec,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0.16862746
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5d844c81e12534399a25bd6a781766ec, type: 2}

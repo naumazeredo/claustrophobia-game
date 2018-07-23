@@ -4,14 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - PlayerAttack
-  - EnemyAttack
   - Hull
   - Enemy
   - Bounds
   - Spawn
-  - UsableHolder
   - Bullet
+  - ItemHolder
   layers:
   - Default
   - TransparentFX

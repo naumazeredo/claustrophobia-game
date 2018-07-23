@@ -29,6 +29,8 @@ GameObject:
   - component: {fileID: 114172542377163072}
   - component: {fileID: 114437867663806492}
   - component: {fileID: 95576466166235468}
+  - component: {fileID: 114819299125287544}
+  - component: {fileID: 114378909862286188}
   m_Layer: 8
   m_Name: PiercingBullet
   m_TagString: Bullet
@@ -151,6 +153,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushForce: 200
+--- !u!114 &114378909862286188
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1292060677262280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c8ba7bf4cca4fc8aeb76b72bbb8683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  justCreated: 1
 --- !u!114 &114437867663806492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -186,6 +200,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efb63e6bf64ae433c8c0e73c08f3b4ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114819299125287544
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1292060677262280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3c8ba7bf4cca4fc8aeb76b72bbb8683, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  justCreated: 1
 --- !u!212 &212898184169378736
 SpriteRenderer:
   m_ObjectHideFlags: 1

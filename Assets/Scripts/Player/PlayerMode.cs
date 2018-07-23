@@ -25,6 +25,7 @@ public class PlayerMode : MonoBehaviour {
 	private Rigidbody2D rb, hullRb;
 	private GameObject player;
 	private PlayerMovement playerMoviment;
+	private ItemHolder itemHolder;
 
 	private bool invencible;
 
@@ -34,6 +35,7 @@ public class PlayerMode : MonoBehaviour {
 		shooting = GetComponentInChildren<Shooting>();
 		rb = GetComponent<Rigidbody2D>();
 		hullRb = GameObject.FindWithTag("Hull").GetComponent<Rigidbody2D>();
+		itemHolder = GameObject.FindWithTag("ItemHolder").GetComponent<ItemHolder>();
 
 		player = GameObject.FindWithTag("Player");
 		playerMoviment = player.GetComponent<PlayerMovement>();
@@ -47,6 +49,7 @@ public class PlayerMode : MonoBehaviour {
 				rb.drag = 0.0f;
 				hullRb.velocity = Vector2.zero;
 				invencible = false;
+				itemHolder.EndUse();
 				Change(Mode.normal);
 			}
 		}
