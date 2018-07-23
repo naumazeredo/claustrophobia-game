@@ -13,7 +13,6 @@ public class HullMode : MonoBehaviour {
 
 	private Vector3 baseHullSize;
 	private ParticleSystem.ShapeModule shape;
-	private bool increasingHull;
 
 
 	// Use this for initialization
@@ -34,7 +33,7 @@ public class HullMode : MonoBehaviour {
 	}
 
   void OnTriggerEnter2D(Collider2D col) {
-    if (increasingHull && col.tag == "Bullet") {
+    if (playerMode.mode == PlayerMode.Mode.bleach && col.tag == "Bullet") {
       if (col.GetComponent<CreateInsideBleach>().justCreated)
         return;
       col.GetComponent<UnitHealth>().TakeDamage(true);
@@ -50,7 +49,7 @@ public class HullMode : MonoBehaviour {
 
 	public void ExpansionEnd() {
     transform.position = player.transform.position;
-    increasingHull = false;
+		playerMode.Change(PlayerMode.Mode.normal);
     itemHolder.EndUse();
 	}
 }
