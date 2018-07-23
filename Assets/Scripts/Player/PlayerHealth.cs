@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour {
   ParticleSystem hullEffect;
   private PlayerMode playerMode;
   private AudioSource hitSound;
+  private Animator hullAnimator;
 
   GameController gameController;
 
@@ -26,7 +27,10 @@ public class PlayerHealth : MonoBehaviour {
     currentHealth = totalHealth;
 
     spriteRenderer = GetComponent<SpriteRenderer>();
-    hullTransform = GameObject.FindWithTag("Hull").transform;
+
+    var hull = GameObject.FindWithTag("Hull");
+    hullTransform = hull.transform;
+    hullAnimator = hull.GetComponent<Animator>();
     hullEffect = hullTransform.GetChild(0).GetComponent<ParticleSystem>();
 
     gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
@@ -44,13 +48,8 @@ public class PlayerHealth : MonoBehaviour {
       return;
     }
 
-    // TODO: Use predefined values?
-    // TODO: Smooth transition?
-    float newScale = hullTransform.localScale.x - 0.1f;
-    hullTransform.localScale = new Vector3(newScale, newScale, 1);
-    var shape = hullEffect.shape;
-    shape.radius = newScale / 2f;
-
+    hullAnimator.SetInteger("Life", currentHealth);
+    hullAnimator.SetTrigger("TakeDamage");
     // XXX: Move hull collider to child, change child scale and change hull sprite!
 
     StartCoroutine(Invincibility());
